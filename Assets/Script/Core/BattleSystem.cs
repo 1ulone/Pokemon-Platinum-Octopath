@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public enum state
 
 public class BattleSystem : MonoBehaviour
 {
+	public static BattleSystem instances;
+
 	[Header("Main Component")]
 	[SerializeField] BattleUnit playerUnit;
 	[SerializeField] BattleUnit opponentUnit;
@@ -22,6 +25,9 @@ public class BattleSystem : MonoBehaviour
 	[Header("Player UI Component")]
 	[SerializeField] BattleMenu menu;
 	[SerializeField] MoveUI moveOptions;
+	[SerializeField] PartyUI partyMemberUI; 
+
+	public PokemonParty PlayerParty { get { return playerParty; } }
 
 	private state state;
 	private MoveClass playerMove;
@@ -31,14 +37,18 @@ public class BattleSystem : MonoBehaviour
 	private PokemonParty opponentParty;
 	private PokemonClass opponentPokemon;
 
-	private void Start()
+	private void Awake()
 	{
+		instances = this;
 	}
 
 	public void StartBattle(PokemonParty pparty, PokemonClass oppoP)
 	{
 		this.playerParty = pparty;
 		this.opponentPokemon = oppoP;
+
+		partyMemberUI.InitializeUI();
+
 		StartCoroutine(SetupBattle());
 	}
 
@@ -82,18 +92,15 @@ public class BattleSystem : MonoBehaviour
 		moveOptions.UpdateUI();
 
 		yield return dialog.TypeDialog($"{playerUnit.pname} use {playerMove.data.mname}");
-		yield return new WaitForSeconds(1f);
-
 		yield return BattleCamera.cam.ChangeState(camState.onZoomEnemy);
 
 		DamageDetails details = opponentUnit.pokemon.TakeDamage(playerMove, playerUnit.pokemon);
 		opphud.UpdateHP();
 		StartCoroutine(opponentUnit.hitEffect());
 		yield return ShowDamageDetails(details);
-		yield return new WaitForSeconds(1f);
 
 		if (details.fainted)
-			yield return dialog.TypeDialog($"{opponentUnit.pname} Fainted");
+			{ yield return dialog.TypeDialog($"{opponentUnit.pname} Fainted"); GameSystemManager.i.ExitBattle(true); }
 		else
 			StartCoroutine(OpponentTurn());
 
@@ -106,18 +113,32 @@ public class BattleSystem : MonoBehaviour
 		opponentMove.pp--;
 
 		yield return dialog.TypeDialog($"{opponentUnit.pname} use {opponentMove.data.mname}");
-		yield return new WaitForSeconds(1f);
-
 		yield return BattleCamera.cam.ChangeState(camState.onZoomPlayer);
 
 		DamageDetails details = playerUnit.pokemon.TakeDamage(opponentMove, opponentUnit.pokemon);
 		hud.UpdateHP();
 		StartCoroutine(playerUnit.hitEffect());
 		yield return ShowDamageDetails(details);
-		yield return new WaitForSeconds(1f);
 
 		if (details.fainted)
-			yield return dialog.TypeDialog($"{playerUnit.pname} Fainted");
+		{ 
+			yield return dialog.TypeDialog($"{playerUnit.pname} Fainted"); 
+			var nextPokemon = playerParty.GetPokemon();
+			if (nextPokemon != null)
+			{
+				yield return dialog.TypeDialog($"You did well {playerUnit.pname}");
+
+				playerUnit.Setup(nextPokemon);
+				hud.SetData(nextPokemon);
+				moveOptions.Setup(nextPokemon.moves);
+
+				yield return dialog.TypeDialog($"Go {nextPokemon.data.pname}!");
+
+				ACTIONstate();
+			} else {
+				GameSystemManager.i.ExitBattle(false); 
+			}
+		}
 		else
 			ACTIONstate();
 

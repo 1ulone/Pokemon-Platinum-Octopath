@@ -20,5 +20,7 @@ public class BattleDialog : MonoBehaviour
 			this.t.text += l;
 			yield return new WaitForSeconds(1f/typeSpeed);
 		}
+
+		yield return new WaitForSeconds(1f);
 	}
 }							

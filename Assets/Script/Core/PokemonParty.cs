@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PokemonParty : MonoBehaviour
 {
 	[SerializeField] List<PokemonClass> party;
+	public List<PokemonClass> Party { get { return party; } }
 
 	private void Start()
 	{
@@ -12,7 +14,5 @@ public class PokemonParty : MonoBehaviour
 	}
 
 	public PokemonClass GetPokemon()
-	{
-		return party[0];
-	}
+	{ return party.Where(x => x.HP > 0).FirstOrDefault(); }
 }							

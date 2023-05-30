@@ -24,6 +24,18 @@ public class GlobalVariable : MonoBehaviour
 		return s;
 	}
 
+	public Sprite GetTypeIcon(PokemonType type)
+	{
+		Sprite s = null;
+			
+		foreach(moveSprite m in moveSprites)
+			if (m.type == type)
+				s = m.icon;
+		
+		return s;
+	}
+
+
 	public Material GetMaterial(materialType type)
 	{
 		Material mm = null;
@@ -54,4 +66,5 @@ public class moveSprite
 {
 	[SerializeField] public PokemonType type;
 	[SerializeField] public Sprite sprite;
+	[SerializeField] public Sprite icon;
 }

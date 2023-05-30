@@ -123,6 +123,129 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &396787646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396787648}
+  - component: {fileID: 396787647}
+  - component: {fileID: 396787649}
+  m_Layer: 0
+  m_Name: GameSystemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &396787647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396787646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e869de3bd364b08429c0e0f16a51c498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importantObject:
+  - {fileID: 396787646}
+  playerOverworld: {fileID: 581792068}
+--- !u!4 &396787648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396787646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396787649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396787646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ef143c9c931ef47b3353f5f9375640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - type: 0
+    mat: {fileID: 2100000, guid: e102c2dba665a0a4d981bca901af54b9, type: 2}
+  - type: 1
+    mat: {fileID: 2100000, guid: c2f9e1ed33a451541a38d99e5e61045f, type: 2}
+  moveSprites:
+  - type: 1
+    sprite: {fileID: -181846922, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 622133615, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 2
+    sprite: {fileID: 808906101, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 75458301, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 3
+    sprite: {fileID: -245722823, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 475209436, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 4
+    sprite: {fileID: 174341495, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 1919131583, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 5
+    sprite: {fileID: 2055126842, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -2000654462, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 6
+    sprite: {fileID: 1422059812, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -832354762, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 7
+    sprite: {fileID: -1562940441, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -663131257, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 8
+    sprite: {fileID: -739865921, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -1355568513, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 9
+    sprite: {fileID: 358380090, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -519822748, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 10
+    sprite: {fileID: 1898091282, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -11307657, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 11
+    sprite: {fileID: 22088741, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 87469445, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 12
+    sprite: {fileID: 1830198788, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 219514659, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 13
+    sprite: {fileID: 614068907, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 1100867980, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 14
+    sprite: {fileID: 2063076824, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 1855381112, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 15
+    sprite: {fileID: -1527555152, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -2096036247, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 16
+    sprite: {fileID: 169920051, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 1309047863, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 17
+    sprite: {fileID: 1280661883, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -6540068, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 18
+    sprite: {fileID: -105783223, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: -1995252341, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  - type: 0
+    sprite: {fileID: -1567312946, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
+    icon: {fileID: 944806050, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
 --- !u!1 &581792064
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581792067}
   - component: {fileID: 581792068}
+  - component: {fileID: 581792071}
   - component: {fileID: 581792065}
   - component: {fileID: 581792069}
   - component: {fileID: 581792070}
@@ -190,6 +314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   nextPoint: {fileID: 646977722}
+  wildLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!136 &581792069
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -238,6 +365,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &581792071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581792064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbbe5f8de24c174ebb57e3369f79812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  party:
+  - Data: {fileID: 11400000, guid: 2373fc39e5e6e4b4e8f2265d3c618502, type: 2}
+    Level: 40
+  - Data: {fileID: 11400000, guid: f1b107bfff1339948add058969b8efda, type: 2}
+    Level: 5
 --- !u!1 &646977721
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,9 +422,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 703973136}
+  - component: {fileID: 703973137}
   - component: {fileID: 703973135}
   - component: {fileID: 703973134}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grasstile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,6 +512,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &703973137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703973133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d186e70ac81ba45bf4f1f7cb34c450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemon:
+  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
+    Level: 100
+  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
+    Level: 50
 --- !u!1 &969048362
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,9 +538,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969048365}
+  - component: {fileID: 969048366}
   - component: {fileID: 969048364}
   - component: {fileID: 969048363}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grasstile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,6 +628,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &969048366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969048362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d186e70ac81ba45bf4f1f7cb34c450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemon:
+  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
+    Level: 100
+  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
+    Level: 50
 --- !u!1 &1466605184
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +656,7 @@ GameObject:
   - component: {fileID: 1466605186}
   - component: {fileID: 1466605185}
   - component: {fileID: 1466605187}
+  - component: {fileID: 1466605188}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -571,6 +752,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1466605188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466605184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b620b4817aa11a549aa3c1fcbf7b48b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1695108743
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695108746}
+  - component: {fileID: 1695108748}
   - component: {fileID: 1695108745}
   - component: {fileID: 1695108744}
   - component: {fileID: 1695108747}
@@ -689,6 +883,21 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1695108748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695108743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3faca29bc404a4c95615e063446d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 7
+  DefaultTarget: {fileID: 581792067}
+  offset: {x: 0, y: 6.5, z: -8}
 --- !u!1 &1773131998
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1773132000}
+  - component: {fileID: 1773132002}
   - component: {fileID: 1773131999}
   - component: {fileID: 1773132001}
   m_Layer: 3
@@ -787,6 +997,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1773132002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773131998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d186e70ac81ba45bf4f1f7cb34c450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemon:
+  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
+    Level: 100
+  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
+    Level: 50
 --- !u!1 &1834272529
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,9 +1023,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1834272532}
+  - component: {fileID: 1834272533}
   - component: {fileID: 1834272531}
   - component: {fileID: 1834272530}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grasstile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,6 +1113,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1834272533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834272529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d186e70ac81ba45bf4f1f7cb34c450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wildPokemon:
+  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
+    Level: 100
+  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
+    Level: 50
 --- !u!1 &1850074094
 GameObject:
   m_ObjectHideFlags: 0

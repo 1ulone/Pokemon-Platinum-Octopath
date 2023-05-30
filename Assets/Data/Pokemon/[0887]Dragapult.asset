@@ -16,14 +16,14 @@ MonoBehaviour:
   description: When trying to protect someone, it extends its elbows as if they were
     swords and fights savagely.
   animator: {fileID: 9100000, guid: b39d9e32c74deb04b8e6a381bab48e64, type: 2}
-  type1: 11
-  type2: 7
-  maxHp: 68
-  attack: 125
-  defense: 65
-  specialAttack: 65
-  specialDefense: 115
-  speed: 80
+  type1: 15
+  type2: 14
+  maxHp: 88
+  attack: 120
+  defense: 75
+  specialAttack: 100
+  specialDefense: 75
+  speed: 142
   learnables:
   - move: {fileID: 11400000, guid: b7dfed8d477a5854f88a864beb5f729d, type: 2}
     level: 0
@@ -36,6 +36,7 @@ MonoBehaviour:
   inGameSize: 24
   height: 0
   width: 0
+  icon: {fileID: 1896995169, guid: 1b70ddb3eb69b094496c71babed1b4c8, type: 3}
   emmitsLight: 0
   lightColor: {r: 32, g: 10.917647, b: 0, a: 1}
   lightPosition: {x: 0, y: 0, z: 0}

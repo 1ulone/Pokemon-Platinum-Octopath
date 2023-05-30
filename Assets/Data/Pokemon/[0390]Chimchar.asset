@@ -32,6 +32,7 @@ MonoBehaviour:
   inGameSize: 32
   height: 0
   width: 0
+  icon: {fileID: 130398855, guid: 1b70ddb3eb69b094496c71babed1b4c8, type: 3}
   emmitsLight: 1
   lightColor: {r: 2, g: 1.027451, b: 0, a: 1}
   lightPosition: {x: -0.25, y: 0.35, z: -0.4}
