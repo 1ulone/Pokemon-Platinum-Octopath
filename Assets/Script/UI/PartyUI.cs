@@ -15,11 +15,22 @@ public class PartyUI : MonoBehaviour
 	[SerializeField] private CanvasGroup info;
 
 	private PokemonParty playerParty;
+	private PokemonClass selectedPokemon;
+	private ConfirmButton cbut;
+
+	private void  Start()
+	{
+		cbut = FindObjectOfType<ConfirmButton>();
+		ExitUI();
+	}
 
 	public void InitializeUI()
 	{
 		info.alpha = 0;
 		playerParty = BattleSystem.instances.PlayerParty;
+
+		cbut.confirmAction += OnAccept;
+		cbut.cancelAction += OnCancel;
 
 		foreach(PartyMemberUI m in member)
 			m.gameObject.SetActive(false);
@@ -44,6 +55,12 @@ public class PartyUI : MonoBehaviour
 	public void ExitUI()
 	{
 		info.alpha = 0;
+		transform.localPosition = new Vector3(0, 800, 0);
+		selectedPokemon = null;
+
+		cbut.confirmAction = null;
+		cbut.cancelAction = null;
+		cbut.ExitButton();
 	}
 
 	public void UpdateUI()
@@ -59,6 +76,10 @@ public class PartyUI : MonoBehaviour
 
 	public void SetDescriptionUI(PokemonClass pk)
 	{
+		selectedPokemon = pk;
+		StartCoroutine(BattleDialog.d.TypeDialog($"Will you switch to {selectedPokemon.data.pname}?"));
+		cbut.ShowButton();
+
 		if (info.alpha == 0)
 			LeanTween.value(info.gameObject, 0, 1, 0.25f).setOnUpdate((float x) => { info.alpha = x; } );
 
@@ -71,5 +92,31 @@ public class PartyUI : MonoBehaviour
 		} else { type2.enabled = false; }
 
 		move.Setup(pk.moves);
+	}
+
+	public void OnAccept()
+	{
+		if (selectedPokemon == null)
+			return;
+
+		if (selectedPokemon.HP <= 0)
+		{
+			StartCoroutine(BattleDialog.d.TypeDialog("You can't send out a fainted pokemon"));
+			return;
+		}
+
+		if (selectedPokemon == BattleSystem.instances.PlayerCurrentPokemon)
+		{
+			StartCoroutine(BattleDialog.d.TypeDialog("You can't switch with the same pokemon"));
+			return;
+		}
+		
+		StartCoroutine(BattleSystem.instances.SwitchPokemon(selectedPokemon));
+		ExitUI();
+	}
+
+	public void OnCancel()
+	{
+		selectedPokemon = null;
 	}
 }

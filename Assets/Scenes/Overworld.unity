@@ -360,6 +360,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: cc13db50-6506-4ff9-9bef-9fafb1e38cd2
     m_ActionName: Player/WASD[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick/x,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f0e3db20-9807-4350-a9cd-8bd2125f36bf
+    m_ActionName: Player/Sprint[/Keyboard/shift,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -378,10 +382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   party:
-  - Data: {fileID: 11400000, guid: 2373fc39e5e6e4b4e8f2265d3c618502, type: 2}
-    Level: 40
   - Data: {fileID: 11400000, guid: f1b107bfff1339948add058969b8efda, type: 2}
     Level: 5
+  - Data: {fileID: 11400000, guid: 2373fc39e5e6e4b4e8f2265d3c618502, type: 2}
+    Level: 40
 --- !u!1 &646977721
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703973133}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5.75, y: 0.35, z: 2.5}
+  m_LocalPosition: {x: 5.5, y: 0.35, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -621,7 +625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969048362}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5.75, y: 0.35, z: 1}
+  m_LocalPosition: {x: 5.5, y: 0.35, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -977,7 +981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773131998}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5.75, y: 0.35, z: 1.75}
+  m_LocalPosition: {x: 5.5, y: 0.35, z: 1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1106,7 +1110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834272529}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5.75, y: 0.35, z: 3.25}
+  m_LocalPosition: {x: 5.5, y: 0.35, z: 3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,0 +1,1369 @@
+fileFormatVersion: 2
+guid: 89e0e314c77210c4496c04bb833d8e1a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0487giratina-backrare_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dceee276f872e4daca4075980f81f6
+      internalID: -910271901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b5e41fd20c2d142b876aa8bc40a5d2
+      internalID: 1338492341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ff11b7366f35c43a2636a7375ab60c
+      internalID: -169190715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1527682f4b0123b49af30ad55e5be40b
+      internalID: 25058281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2f94dc92c36db49a34bec4184a55bb
+      internalID: -2030092839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7930e4cf2b0c04aa5b15997d5ed068
+      internalID: 1791632991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_6
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6915dff6b6f1084f8ac7d926136f2e0
+      internalID: -1562591728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_7
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 516
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797babf0a560312408c504da3e871f31
+      internalID: -673378310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1ac89f8e33124439135368830c22bb
+      internalID: -422804246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490b2ff05ae3e3142963981320d605fa
+      internalID: -1781874383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48b4d78b4a111143b1ab361f2392538
+      internalID: 1938302753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_11
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663da7e462d07424289382353c3cf001
+      internalID: -1130971103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_12
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f68a14ee20ecd4aa67d0335ed30f0a
+      internalID: -350559530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_13
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab84c2e010238c4598ae8e20775b5ea
+      internalID: -1943289698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed954a54de3b39c4c84faf5cde8471b7
+      internalID: -1668930774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_15
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 430
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f74bd9735eb064db584228f584bae8
+      internalID: -1838359720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be634d7111539224685520227586e943
+      internalID: -1432819145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc55c5e09134da48a8c336dc8777e06
+      internalID: 904779970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_18
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37970c6fe1c8b4c44932f62a3d7ea5fa
+      internalID: -1277495426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_19
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188246dc570b28f49a6191871dae193a
+      internalID: 477611180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_20
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d385a07552516b48a485d9c888c7b28
+      internalID: 883476217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_21
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae920caf9d829c74bbe1e50f3d2f4fcf
+      internalID: 721999143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_22
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4809107da96ddc94ca19b863533ee4bc
+      internalID: 1335777415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_23
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 344
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a34d48138d6524186fe4df5487fec9
+      internalID: -438115654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288a3c0d345dd0146ae6f514979fecaa
+      internalID: 225861950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_25
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927750a465acdec4d9e74597fee5b31b
+      internalID: 933350749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_26
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05dc56a4dbf2974b9fa2446d473a334
+      internalID: -1764688352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_27
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3905d029716a0042a7d100e9209c5ca
+      internalID: -369146476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_28
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa86cde558308214c8988ebcd3dec78d
+      internalID: -2067493753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_29
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33833d33914a804c89fc944036be828
+      internalID: 1958338828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_30
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0851a26d72429f24eba14100b1332ae8
+      internalID: 1355243802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 258
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21537e11859db0247adf8134623d9e4b
+      internalID: -1580214417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c05bc94b9f87748a934253e8898747
+      internalID: -417371691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_33
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87017ba43b051a4d87f0ed327f38ef4
+      internalID: 1739805368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_34
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160a696dd9ee2d74ca422d1dc8dc0492
+      internalID: 190501984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_35
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe20f0bbb360974fac38f46acd48778
+      internalID: -1552380822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_36
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673b157b05c94c04a93e47955e569b6f
+      internalID: -63615175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_37
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ca6b104b2f057429d91f9dcc811581
+      internalID: -2125319620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_38
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4771f2c9df43608489847429a04e7fda
+      internalID: 1088402483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_39
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 172
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6401aceb00a79464b8e09d5a1c199f04
+      internalID: -1876186920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7629b43b875e3fe4d98692caaf9a744e
+      internalID: -314608568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_41
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f7258ddedd18b4ba23dd074a66ad87
+      internalID: -1265321785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_42
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230c43088db563844bd32e29eef6406d
+      internalID: 113982184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_43
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c3b730097e74345a74ae327941e1b7
+      internalID: 1371371881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_44
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0dfe5bf2b4abb43a61e507d0115e34
+      internalID: -1617313928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_45
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614f007642f82d7458b985244b7e4926
+      internalID: -1353322945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_46
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc769fbc202cad48a7f160aed0641cf
+      internalID: -493010116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_47
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 86
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071510da33642dc43afdaf7f742c9cde
+      internalID: 684844787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0df865a57ed0204e98e8a13464b885c
+      internalID: 820622401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_49
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ae4f15579f90442ad1d8c938843f1b
+      internalID: 445319816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_50
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85baf0abea95c1449a15e93071d6b4b0
+      internalID: 1358710172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_51
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ea17fb4027a094aba094b0eade72a0
+      internalID: -82760476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_52
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c4a10cea6afa74ca9f7ba262fdf586
+      internalID: -383767137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_53
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4250c160003ccb24b8738c068919d0fc
+      internalID: -997049573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_54
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991f1c951cd39a84292b1a56b8211572
+      internalID: 1973758309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0487giratina-backrare_55
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 0
+        width: 104
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1442def52df6e7044b35a46a7b485d35
+      internalID: -613077428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: e7fb5b1ac443d7749bb20adadb81e69b, type: 3}
+      name: _Emmision
+    nameFileIdTable:
+      0487giratina-backrare_0: -910271901
+      0487giratina-backrare_1: 1338492341
+      0487giratina-backrare_10: 1938302753
+      0487giratina-backrare_11: -1130971103
+      0487giratina-backrare_12: -350559530
+      0487giratina-backrare_13: -1943289698
+      0487giratina-backrare_14: -1668930774
+      0487giratina-backrare_15: -1838359720
+      0487giratina-backrare_16: -1432819145
+      0487giratina-backrare_17: 904779970
+      0487giratina-backrare_18: -1277495426
+      0487giratina-backrare_19: 477611180
+      0487giratina-backrare_2: -169190715
+      0487giratina-backrare_20: 883476217
+      0487giratina-backrare_21: 721999143
+      0487giratina-backrare_22: 1335777415
+      0487giratina-backrare_23: -438115654
+      0487giratina-backrare_24: 225861950
+      0487giratina-backrare_25: 933350749
+      0487giratina-backrare_26: -1764688352
+      0487giratina-backrare_27: -369146476
+      0487giratina-backrare_28: -2067493753
+      0487giratina-backrare_29: 1958338828
+      0487giratina-backrare_3: 25058281
+      0487giratina-backrare_30: 1355243802
+      0487giratina-backrare_31: -1580214417
+      0487giratina-backrare_32: -417371691
+      0487giratina-backrare_33: 1739805368
+      0487giratina-backrare_34: 190501984
+      0487giratina-backrare_35: -1552380822
+      0487giratina-backrare_36: -63615175
+      0487giratina-backrare_37: -2125319620
+      0487giratina-backrare_38: 1088402483
+      0487giratina-backrare_39: -1876186920
+      0487giratina-backrare_4: -2030092839
+      0487giratina-backrare_40: -314608568
+      0487giratina-backrare_41: -1265321785
+      0487giratina-backrare_42: 113982184
+      0487giratina-backrare_43: 1371371881
+      0487giratina-backrare_44: -1617313928
+      0487giratina-backrare_45: -1353322945
+      0487giratina-backrare_46: -493010116
+      0487giratina-backrare_47: 684844787
+      0487giratina-backrare_48: 820622401
+      0487giratina-backrare_49: 445319816
+      0487giratina-backrare_5: 1791632991
+      0487giratina-backrare_50: 1358710172
+      0487giratina-backrare_51: -82760476
+      0487giratina-backrare_52: -383767137
+      0487giratina-backrare_53: -997049573
+      0487giratina-backrare_54: 1973758309
+      0487giratina-backrare_55: -613077428
+      0487giratina-backrare_6: -1562591728
+      0487giratina-backrare_7: -673378310
+      0487giratina-backrare_8: -422804246
+      0487giratina-backrare_9: -1781874383
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

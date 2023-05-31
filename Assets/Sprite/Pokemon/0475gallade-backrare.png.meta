@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 586d5ce5db468c14ba07be46483819b9
+guid: a226801274a451843a94e9fee5cba981
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 0475gallade-front_0
+      name: 0475gallade-frontrare_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 140
-        width: 58
-        height: 70
+        y: 207
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b03d2c84d3627c4db9cf7702cb76f80
-      internalID: -1109823212
+      spriteID: 8523e2e3ce17ab2489b0a41a05242179
+      internalID: -1424776132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_1
+      name: 0475gallade-frontrare_1
       rect:
         serializedVersion: 2
-        x: 58
-        y: 140
-        width: 58
-        height: 70
+        x: 53
+        y: 207
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab2f6e331a8426147b192da10920a380
-      internalID: -708701168
+      spriteID: edbc8e8dc0846924bbe0467a7830b5c0
+      internalID: 1457527074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_2
+      name: 0475gallade-frontrare_2
       rect:
         serializedVersion: 2
-        x: 116
-        y: 140
-        width: 58
-        height: 70
+        x: 106
+        y: 207
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 215aa714b78424b418a06e1a45995eba
-      internalID: -714154504
+      spriteID: fdc8a535ab3b29f4ea2dc182fb42177a
+      internalID: -332882944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_3
+      name: 0475gallade-frontrare_3
       rect:
         serializedVersion: 2
-        x: 174
-        y: 140
-        width: 58
-        height: 70
+        x: 159
+        y: 207
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7ef8dc0252bfde46b1d509f9a7ea85d
-      internalID: 1948183066
+      spriteID: 53a5bb6afa516164ea9ed9499883df5a
+      internalID: 687610625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_4
+      name: 0475gallade-frontrare_4
       rect:
         serializedVersion: 2
-        x: 232
-        y: 140
-        width: 58
-        height: 70
+        x: 212
+        y: 207
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 308e015a55a0de34ea9d65284506c491
-      internalID: -1221825088
+      spriteID: d59024ff258705c45bb7cf4eccd5e38a
+      internalID: 864325982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_5
+      name: 0475gallade-frontrare_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 70
-        width: 58
-        height: 70
+        y: 138
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b167f5f425547154cb9ab7122d860fc8
-      internalID: -447508157
+      spriteID: 8b437da965598154886f5b6619835092
+      internalID: 831781815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_6
+      name: 0475gallade-frontrare_6
       rect:
         serializedVersion: 2
-        x: 58
-        y: 70
-        width: 58
-        height: 70
+        x: 53
+        y: 138
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff52cb3039b77b14cb38d24b32e49531
-      internalID: -2053941233
+      spriteID: d1c4ccc979d4def4a8fe0029fe1cd16d
+      internalID: 670195331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_7
+      name: 0475gallade-frontrare_7
       rect:
         serializedVersion: 2
-        x: 116
-        y: 70
-        width: 58
-        height: 70
+        x: 106
+        y: 138
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5d8b8a76beb7a4f847f3b0deeb6405
-      internalID: -2092317677
+      spriteID: f1ec662d8efd42c43ba138d752b9d289
+      internalID: -1431973319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_8
+      name: 0475gallade-frontrare_8
       rect:
         serializedVersion: 2
-        x: 174
-        y: 70
-        width: 58
-        height: 70
+        x: 159
+        y: 138
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0b1ce41d4b1c884dbdc58cbdc748922
-      internalID: -1606509608
+      spriteID: 852c085b080558442ac8c6f4a015acbe
+      internalID: -159025416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_9
+      name: 0475gallade-frontrare_9
       rect:
         serializedVersion: 2
-        x: 232
-        y: 70
-        width: 58
-        height: 70
+        x: 212
+        y: 138
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +320,125 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 286d6ef936b96d24b921ccf44d4b2108
-      internalID: 725853810
+      spriteID: 837c1990f2ac0514099c4b80d17cb593
+      internalID: 999619650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_10
+      name: 0475gallade-frontrare_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 69
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3dfe4be00791ee4092cbe72de653f34
+      internalID: 1721908593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_11
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 69
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601f60dda1e00d547b2800ce2c5c6271
+      internalID: 464405781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 69
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf8d278c504b044bb5261d8d4a06961
+      internalID: -214041644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 69
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd48ac48c907b5b46b5ff7c957840f8e
+      internalID: 90671172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_14
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 69
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ff6fd6a80b143409bd82b90a30370c
+      internalID: 1290591201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 58
-        height: 70
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,20 +446,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bd70fcd4dfee4f42848649e639cbab4
-      internalID: 1637014376
+      spriteID: 36b340986b05a994fb22a177e47e2413
+      internalID: -1292803052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_11
+      name: 0475gallade-frontrare_16
       rect:
         serializedVersion: 2
-        x: 58
+        x: 53
         y: 0
-        width: 58
-        height: 70
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,20 +467,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09e3c38270bce3d4a90d10259fecfb9c
-      internalID: -672127548
+      spriteID: 1923f287ff7786841a65d4ceafe610a1
+      internalID: -2035251675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0475gallade-front_12
+      name: 0475gallade-frontrare_17
       rect:
         serializedVersion: 2
-        x: 116
+        x: 106
         y: 0
-        width: 58
-        height: 70
+        width: 53
+        height: 69
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,8 +488,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d4da67ea1b442348b76f0d6aac09bc6
-      internalID: 59783981
+      spriteID: 4b73e96489f320445888c426c5a87900
+      internalID: -1364173911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_18
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034ad57a74f37b64ba1c59e06d183d27
+      internalID: 1006715830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0475gallade-frontrare_19
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 53
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d968321e40cbe4484c01840daeb4d6
+      internalID: 1526575079
       vertices: []
       indices: 
       edges: []
@@ -400,19 +547,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      0475gallade-front_0: -1109823212
-      0475gallade-front_1: -708701168
-      0475gallade-front_10: 1637014376
-      0475gallade-front_11: -672127548
-      0475gallade-front_12: 59783981
-      0475gallade-front_2: -714154504
-      0475gallade-front_3: 1948183066
-      0475gallade-front_4: -1221825088
-      0475gallade-front_5: -447508157
-      0475gallade-front_6: -2053941233
-      0475gallade-front_7: -2092317677
-      0475gallade-front_8: -1606509608
-      0475gallade-front_9: 725853810
+      0475gallade-frontrare_0: -1424776132
+      0475gallade-frontrare_1: 1457527074
+      0475gallade-frontrare_10: 1721908593
+      0475gallade-frontrare_11: 464405781
+      0475gallade-frontrare_12: -214041644
+      0475gallade-frontrare_13: 90671172
+      0475gallade-frontrare_14: 1290591201
+      0475gallade-frontrare_15: -1292803052
+      0475gallade-frontrare_16: -2035251675
+      0475gallade-frontrare_17: -1364173911
+      0475gallade-frontrare_18: 1006715830
+      0475gallade-frontrare_19: 1526575079
+      0475gallade-frontrare_2: -332882944
+      0475gallade-frontrare_3: 687610625
+      0475gallade-frontrare_4: 864325982
+      0475gallade-frontrare_5: 831781815
+      0475gallade-frontrare_6: 670195331
+      0475gallade-frontrare_7: -1431973319
+      0475gallade-frontrare_8: -159025416
+      0475gallade-frontrare_9: 999619650
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

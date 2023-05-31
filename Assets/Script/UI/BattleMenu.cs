@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class BattleMenu : MonoBehaviour
 {
@@ -57,13 +57,26 @@ public class BattleMenu : MonoBehaviour
 
 		if (!onPkmn)
 		{
+
+		StartCoroutine(FindObjectOfType<BattleDialog>().TypeDialog("Which pokemon will you switch to ?"));
 			pkmnMenu.localPosition = new Vector2(0, 0);
+
 			pkmnMenu.GetComponent<PartyUI>().InitializeUI();
 			LeanTween.value(pkmnMenu.gameObject, 0, 1, 0.2f).setOnUpdate((float x) => { a.alpha = x; } );
 		} else {
-			LeanTween.value(pkmnMenu.gameObject, 1, 0, 0.2f).setOnUpdate((float x) => { a.alpha = x; } ).setOnComplete(()=> { pkmnMenu.localPosition = new Vector2(0, 800); pkmnMenu.GetComponent<PartyUI>().ExitUI(); });
+			LeanTween.value(pkmnMenu.gameObject, 1, 0, 0.2f).setOnUpdate((float x) => { a.alpha = x; } ).setOnComplete(()=> { pkmnMenu.GetComponent<PartyUI>().ExitUI(); });
 		}
 
 		onPkmn = !onPkmn;
 	}
+
+	public void InputFight(InputAction.CallbackContext context)
+		=> onFIGHT();
+
+	public void InputPokemon(InputAction.CallbackContext context)
+		=> onPOKEMON();
+
+	public void InputBag(InputAction.CallbackContext context) {}
+
+	public void InputRun(InputAction.CallbackContext context) {}
 }						  

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,8 +15,6 @@ public class BattleSystem : MonoBehaviour
 	[Header("Main Component")]
 	[SerializeField] BattleUnit playerUnit;
 	[SerializeField] BattleUnit opponentUnit;
-	[SerializeField] BattleHUDController hud;
-	[SerializeField] BattleHUDController opphud;
 
 	[Header("UI Component")]
 	[SerializeField] BattleDialog dialog;
@@ -28,6 +25,7 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] PartyUI partyMemberUI; 
 
 	public PokemonParty PlayerParty { get { return playerParty; } }
+	public PokemonClass PlayerCurrentPokemon { get { return playerUnit.pokemon; } }
 
 	private state state;
 	private MoveClass playerMove;
@@ -55,24 +53,21 @@ public class BattleSystem : MonoBehaviour
 	public IEnumerator SetupBattle()
 	{
 		playerUnit.Setup(playerParty.GetPokemon());
-		hud.SetData(playerUnit.pokemon);
 		moveOptions.Setup(playerUnit.pokemon.moves);
 
 		opponentUnit.Setup(opponentPokemon);
-		opphud.SetData(opponentUnit.pokemon);
 
 		BattleCamera.cam.SetBattleCamera(playerUnit.pokemon.data.inGameSize, opponentUnit.pokemon.data.inGameSize);
 
 		yield return dialog.TypeDialog($"a wild {opponentUnit.pname} appeared!");
-		yield return new WaitForSeconds(1f);
 		ACTIONstate();
 	}
 
 	public void ACTIONstate()
 	{
+		state = state.action;
 		StartCoroutine(dialog.TypeDialog("What will you do ?"));
 		StartCoroutine(BattleCamera.cam.ChangeState(camState.onIdle));
-		state = state.action;
 		menu.toggleMenu(true);
 	}
 
@@ -83,28 +78,44 @@ public class BattleSystem : MonoBehaviour
 		yield return PlayerTurn();
 	}	
 
+	private void EXITstate(bool w)
+	{
+		state = state.exit;
+		GameSystemManager.i.ExitBattle(w);
+	}
+
+	public IEnumerator SwitchPokemon(PokemonClass newPokemon)
+	{
+		yield return BattleCamera.cam.ChangeState(camState.onAttack);
+
+		if (playerUnit.pokemon.HP > 0)
+		{
+			yield return dialog.TypeDialog($"Come back {playerUnit.pname}");
+			playerUnit.FaintAnimation();
+			yield return new WaitForSeconds(1f);
+		}
+
+		playerUnit.Setup(newPokemon);
+		moveOptions.Setup(newPokemon.moves);
+		yield return dialog.TypeDialog($"Go {playerUnit.pname}!");
+
+		StartCoroutine(OpponentTurn());
+	}
+
 	public void SetPlayerMove(MoveClass move)
 		=> playerMove = move;
 
 	private IEnumerator PlayerTurn()
 	{
+		state = state.battle;
+
 		playerMove.pp--;
 		moveOptions.UpdateUI();
 
-		yield return dialog.TypeDialog($"{playerUnit.pname} use {playerMove.data.mname}");
-		yield return BattleCamera.cam.ChangeState(camState.onZoomEnemy);
+		yield return ExecuteMove(playerUnit, opponentUnit, playerMove);
 
-		DamageDetails details = opponentUnit.pokemon.TakeDamage(playerMove, playerUnit.pokemon);
-		opphud.UpdateHP();
-		StartCoroutine(opponentUnit.hitEffect());
-		yield return ShowDamageDetails(details);
-
-		if (details.fainted)
-			{ yield return dialog.TypeDialog($"{opponentUnit.pname} Fainted"); GameSystemManager.i.ExitBattle(true); }
-		else
+		if (state == state.battle)
 			StartCoroutine(OpponentTurn());
-
-		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 	}
 
 	private IEnumerator OpponentTurn()
@@ -112,36 +123,47 @@ public class BattleSystem : MonoBehaviour
 		opponentMove = opponentUnit.pokemon.GetRandomMove();
 		opponentMove.pp--;
 
-		yield return dialog.TypeDialog($"{opponentUnit.pname} use {opponentMove.data.mname}");
-		yield return BattleCamera.cam.ChangeState(camState.onZoomPlayer);
+		yield return ExecuteMove(opponentUnit, playerUnit, opponentMove); 
 
-		DamageDetails details = playerUnit.pokemon.TakeDamage(opponentMove, opponentUnit.pokemon);
-		hud.UpdateHP();
-		StartCoroutine(playerUnit.hitEffect());
+		if (state == state.battle)
+			ACTIONstate();
+	}
+
+	private IEnumerator ExecuteMove(BattleUnit source, BattleUnit target, MoveClass move)
+	{
+		yield return dialog.TypeDialog($"{source.pname} use {move.data.mname}");
+		yield return BattleCamera.cam.ChangeState(camState.onZoomEnemy);
+
+		DamageDetails details = target.pokemon.TakeDamage(move, source.pokemon);
+		target.HUD.UpdateHP();
+		StartCoroutine(target.hitEffect());
 		yield return ShowDamageDetails(details);
 
 		if (details.fainted)
 		{ 
-			yield return dialog.TypeDialog($"{playerUnit.pname} Fainted"); 
+			yield return dialog.TypeDialog($"{target.pname} Fainted"); 
+			target.FaintAnimation();
+			yield return BattleCamera.cam.ChangeState(camState.onAttack);
+			yield return new WaitForSeconds(1f);
+
+			CheckBattleEnd(target);
+		}
+
+		yield return BattleCamera.cam.ChangeState(camState.onAttack);
+	}
+
+	private void CheckBattleEnd(BattleUnit faintedP)
+	{
+		if (faintedP.isPlayer)
+		{
 			var nextPokemon = playerParty.GetPokemon();
 			if (nextPokemon != null)
-			{
-				yield return dialog.TypeDialog($"You did well {playerUnit.pname}");
-
-				playerUnit.Setup(nextPokemon);
-				hud.SetData(nextPokemon);
-				moveOptions.Setup(nextPokemon.moves);
-
-				yield return dialog.TypeDialog($"Go {nextPokemon.data.pname}!");
-
-				ACTIONstate();
-			} else {
-				GameSystemManager.i.ExitBattle(false); 
-			}
-		}
-		else
-			ACTIONstate();
-
+				menu.onPOKEMON();
+			else 
+				EXITstate(false);
+		} 
+		else 
+			EXITstate(true);
 	}
 
 	private IEnumerator ShowDamageDetails(DamageDetails details)

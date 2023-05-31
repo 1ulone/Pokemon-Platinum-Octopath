@@ -5,9 +5,13 @@ public class BattleUnit : MonoBehaviour
 {
 	[SerializeField] private int level;
 	[SerializeField] private bool isPlayerPokemon;
+	[SerializeField] private BattleHUDController hud;
 
-	public PokemonClass pokemon { get; set; }
+	public bool isPlayer { get { return isPlayerPokemon; } }
 	public string pname { get; private set; }
+	public PokemonClass pokemon { get; set; }
+	public BattleHUDController HUD { get { return hud; } }
+
 	private Animator anim;
 	private SpriteRenderer sprite;
 	private Light emmision;
@@ -32,6 +36,8 @@ public class BattleUnit : MonoBehaviour
 		else 
 			anim.Play("front");
 
+		hud.SetData(pokemon);
+
 		//Check for Emmision
 		if (pokemon.data.emmitsLight)
 		{
@@ -47,6 +53,14 @@ public class BattleUnit : MonoBehaviour
 			sprite.material = GlobalVariable.instances.GetMaterial(materialType.Default);
 			emmision.enabled = false; 
 		}
+
+		if (transform.localScale == Vector3.zero)
+			LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.4f).setEaseOutQuart();
+	}
+
+	public void FaintAnimation()
+	{
+		LeanTween.scale(this.gameObject, new Vector3(0, 0, 0), 0.4f).setEaseInQuart();
 	}
 
 	public IEnumerator hitEffect()
