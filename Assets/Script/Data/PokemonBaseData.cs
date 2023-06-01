@@ -40,6 +40,15 @@ public class LearnableMove
 	[SerializeField] public int level;
 }
 
+public enum stat
+{
+	attack,
+	defense,
+	spAttack,
+	spDefense,
+	speed
+}
+
 public enum PokemonType
 {
 	none,

@@ -23,7 +23,7 @@ public class CSVtoSO
 			move.pp = int.Parse(splitData[4]);
 			move.accuracy = int.Parse(splitData[5]);
 			move.priority = int.Parse(splitData[6]);
-			move.moveclass = (moveType)int.Parse(splitData[8])-1;
+			move.category = (MoveCategory)int.Parse(splitData[8])-1;
 
 			AssetDatabase.CreateAsset(move, $"Assets/Data/Move/{objname}.asset");
 		}

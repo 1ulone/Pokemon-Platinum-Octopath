@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "[000]Move", menuName = "Data/Moves")]
@@ -11,12 +12,34 @@ public class MoveBaseData : ScriptableObject
 	[SerializeField] public int accuracy;
 	[SerializeField] public int power;
 	[SerializeField] public int priority;
-	[SerializeField] public moveType moveclass;
+	[SerializeField] public MoveCategory category;
+	[SerializeField] public MoveTarget target;
+	[SerializeField] public MoveEffects effects;
 }							
 
-public enum moveType
+[System.Serializable]
+public class MoveEffects
+{
+	[SerializeField] public List<statBoosts> boosts;
+	[SerializeField] public ConditionID status;
+}
+
+[System.Serializable]
+public class statBoosts
+{
+	public stat stat;
+	public int boost;
+}
+
+public enum MoveCategory 
 {
 	Status,
 	Physical,
 	Special
+}
+
+public enum MoveTarget
+{
+	Foe,
+	Self
 }

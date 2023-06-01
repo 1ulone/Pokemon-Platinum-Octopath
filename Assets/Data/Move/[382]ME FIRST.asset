@@ -19,4 +19,7 @@ MonoBehaviour:
   accuracy: 0
   power: 0
   priority: 0
-  moveclass: 0
+  category: 0
+  target: 0
+  effects:
+    boosts: []

@@ -383,7 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party:
   - Data: {fileID: 11400000, guid: f1b107bfff1339948add058969b8efda, type: 2}
-    Level: 5
+    Level: 100
   - Data: {fileID: 11400000, guid: 2373fc39e5e6e4b4e8f2265d3c618502, type: 2}
     Level: 40
 --- !u!1 &646977721
@@ -529,10 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemon:
-  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
-    Level: 100
-  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
-    Level: 50
+  - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
+    Level: 1
 --- !u!1 &969048362
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,10 +643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemon:
-  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
-    Level: 100
-  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
-    Level: 50
+  - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
+    Level: 1
 --- !u!1 &1466605184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,10 +1010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemon:
-  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
-    Level: 100
-  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
-    Level: 50
+  - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
+    Level: 1
 --- !u!1 &1834272529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,10 +1124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemon:
-  - Data: {fileID: 11400000, guid: 4d8a11d25f2e118449c6eb4d7d098f72, type: 2}
-    Level: 100
-  - Data: {fileID: 11400000, guid: 5f25e8373e7102e49b3e2f0485f93113, type: 2}
-    Level: 50
+  - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
+    Level: 1
 --- !u!1 &1850074094
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,12 @@ public class BattleHUDController : MonoBehaviour
 
 	public void UpdateHP()
 	{ 
-		hpui.LerpHP((float)pokemonm.HP/pokemonm.maxHp);
-		if (isPlayerPokemon) { HPt.text = pokemonm.HP.ToString(); }
+		if (pokemonm.HpChanged)
+		{
+			hpui.LerpHP((float)pokemonm.HP/pokemonm.maxHp);
+			if (isPlayerPokemon) { HPt.text = pokemonm.HP.ToString(); }
+
+			pokemonm.HpChanged = false;
+		}
 	}
 }								   								   

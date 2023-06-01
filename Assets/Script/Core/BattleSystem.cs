@@ -75,21 +75,32 @@ public class BattleSystem : MonoBehaviour
 	{
 		state = state.battle;
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
-		yield return PlayerTurn();
+		ChooseFirstTurn();
 	}	
 
 	private void EXITstate(bool w)
 	{
 		state = state.exit;
+		playerParty.Party.ForEach(p => p.OnBattleEnd());
 		GameSystemManager.i.ExitBattle(w);
+	}
+
+	private void ChooseFirstTurn()
+	{
+		if (playerUnit.pokemon.speed >= opponentUnit.pokemon.speed)
+			StartCoroutine(PlayerTurn());
+		else
+			StartCoroutine(OpponentTurn());
 	}
 
 	public IEnumerator SwitchPokemon(PokemonClass newPokemon)
 	{
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 
+		bool currentPokemonFainted = true;
 		if (playerUnit.pokemon.HP > 0)
 		{
+			currentPokemonFainted = false;
 			yield return dialog.TypeDialog($"Come back {playerUnit.pname}");
 			playerUnit.FaintAnimation();
 			yield return new WaitForSeconds(1f);
@@ -99,7 +110,10 @@ public class BattleSystem : MonoBehaviour
 		moveOptions.Setup(newPokemon.moves);
 		yield return dialog.TypeDialog($"Go {playerUnit.pname}!");
 
-		StartCoroutine(OpponentTurn());
+		if (currentPokemonFainted)
+			ChooseFirstTurn();
+		else
+			StartCoroutine(OpponentTurn());
 	}
 
 	public void SetPlayerMove(MoveClass move)
@@ -132,14 +146,22 @@ public class BattleSystem : MonoBehaviour
 	private IEnumerator ExecuteMove(BattleUnit source, BattleUnit target, MoveClass move)
 	{
 		yield return dialog.TypeDialog($"{source.pname} use {move.data.mname}");
-		yield return BattleCamera.cam.ChangeState(camState.onZoomEnemy);
+		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 
-		DamageDetails details = target.pokemon.TakeDamage(move, source.pokemon);
-		target.HUD.UpdateHP();
-		StartCoroutine(target.hitEffect());
-		yield return ShowDamageDetails(details);
+		if (move.data.category == MoveCategory.Status)
+		{
+			yield return ExecuteMoveEffects(move, source.pokemon, target.pokemon, source.isPlayer?true:false);
+		}
+		else
+		{
+			yield return BattleCamera.cam.ChangeState(source.isPlayer?camState.onZoomEnemy:camState.onZoomPlayer);
+			DamageDetails details = target.pokemon.TakeDamage(move, source.pokemon);
+			target.HUD.UpdateHP();
+			StartCoroutine(target.hitEffect());
+			yield return ShowDamageDetails(details);
+		}
 
-		if (details.fainted)
+		if (target.pokemon.HP <= 0)
 		{ 
 			yield return dialog.TypeDialog($"{target.pname} Fainted"); 
 			target.FaintAnimation();
@@ -149,7 +171,49 @@ public class BattleSystem : MonoBehaviour
 			CheckBattleEnd(target);
 		}
 
+		source.pokemon.OnEndTurn();
+		yield return StatusChangeDetails(source.pokemon);
+		source.HUD.UpdateHP();
+
+		if (source.pokemon.HP <= 0)
+		{ 
+			yield return dialog.TypeDialog($"{source.pname} Fainted"); 
+			source.FaintAnimation();
+			yield return BattleCamera.cam.ChangeState(camState.onAttack);
+			yield return new WaitForSeconds(1f);
+
+			CheckBattleEnd(source);
+		}
+
+
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
+	}
+
+	private IEnumerator ExecuteMoveEffects(MoveClass move, PokemonClass source, PokemonClass target, bool isP)
+	{
+		var effects = move.data.effects;
+		if (effects.boosts != null) //BOOST STAT
+		{
+			if (move.data.target == MoveTarget.Self)
+			{
+				source.ApplyBoosts(effects.boosts); 
+				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomPlayer:camState.onZoomEnemy);
+			} else
+			if (move.data.target == MoveTarget.Foe)
+			{
+				target.ApplyBoosts(effects.boosts);
+				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomEnemy:camState.onZoomPlayer);
+			}
+		}
+
+		if (effects.status != ConditionID.none) //STATUS EFFECT
+		{
+			target.SetStatus(effects.status);
+		}
+
+		yield return StatusChangeDetails(source);
+		yield return StatusChangeDetails(target);
+
 	}
 
 	private void CheckBattleEnd(BattleUnit faintedP)
@@ -164,6 +228,15 @@ public class BattleSystem : MonoBehaviour
 		} 
 		else 
 			EXITstate(true);
+	}
+
+	private IEnumerator StatusChangeDetails(PokemonClass p)
+	{
+		while (p.statusChange.Count > 0)
+		{
+			var message = p.statusChange.Dequeue();
+			yield return dialog.TypeDialog(message);
+		}
 	}
 
 	private IEnumerator ShowDamageDetails(DamageDetails details)
