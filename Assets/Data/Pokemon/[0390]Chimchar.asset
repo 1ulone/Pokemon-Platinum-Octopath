@@ -25,11 +25,13 @@ MonoBehaviour:
   specialDefense: 44
   speed: 61
   learnables:
-  - move: {fileID: 11400000, guid: 610ea7cbc933ebf4688b135b32cbb0c2, type: 2}
-    level: 0
-  - move: {fileID: 11400000, guid: af539cb709f2ad7429adf623d5ebce29, type: 2}
+  - move: {fileID: 11400000, guid: bcf4e87b34dafd24aa7817eaea469493, type: 2}
     level: 0
   - move: {fileID: 11400000, guid: ebaafefafc2864b4898d0f39447649fc, type: 2}
+    level: 0
+  - move: {fileID: 11400000, guid: 936aa98571b28a94e99bf48f7cc316d2, type: 2}
+    level: 0
+  - move: {fileID: 11400000, guid: 34cf6eb1abafcb74b83398f1702fa29c, type: 2}
     level: 0
   inGameSize: 32
   height: 0

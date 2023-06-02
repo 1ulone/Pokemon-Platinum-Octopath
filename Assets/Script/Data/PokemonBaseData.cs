@@ -46,7 +46,10 @@ public enum stat
 	defense,
 	spAttack,
 	spDefense,
-	speed
+	speed,
+
+	accuracy,
+	evasion
 }
 
 public enum PokemonType

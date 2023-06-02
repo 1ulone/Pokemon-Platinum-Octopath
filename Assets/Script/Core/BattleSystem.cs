@@ -123,7 +123,6 @@ public class BattleSystem : MonoBehaviour
 	{
 		state = state.battle;
 
-		playerMove.pp--;
 		moveOptions.UpdateUI();
 
 		yield return ExecuteMove(playerUnit, opponentUnit, playerMove);
@@ -135,7 +134,6 @@ public class BattleSystem : MonoBehaviour
 	private IEnumerator OpponentTurn()
 	{
 		opponentMove = opponentUnit.pokemon.GetRandomMove();
-		opponentMove.pp--;
 
 		yield return ExecuteMove(opponentUnit, playerUnit, opponentMove); 
 
@@ -145,9 +143,19 @@ public class BattleSystem : MonoBehaviour
 
 	private IEnumerator ExecuteMove(BattleUnit source, BattleUnit target, MoveClass move)
 	{
+		bool canExecute = source.pokemon.OnStartTurn();
+		if (!canExecute)
+		{
+			yield return StatusChangeDetails(source.pokemon);
+			source.HUD.UpdateHP();
+			yield break;
+		}
+		yield return StatusChangeDetails(source.pokemon);
+
 		yield return dialog.TypeDialog($"{source.pname} use {move.data.mname}");
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 
+		move.pp--;
 		if (move.data.category == MoveCategory.Status)
 		{
 			yield return ExecuteMoveEffects(move, source.pokemon, target.pokemon, source.isPlayer?true:false);
@@ -185,7 +193,6 @@ public class BattleSystem : MonoBehaviour
 			CheckBattleEnd(source);
 		}
 
-
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 	}
 
@@ -211,6 +218,11 @@ public class BattleSystem : MonoBehaviour
 			target.SetStatus(effects.status);
 		}
 
+		if (effects.volatileStatus != ConditionID.none) //STATUS EFFECT
+		{
+			target.SetVolatileStatus(effects.volatileStatus);
+		}
+
 		yield return StatusChangeDetails(source);
 		yield return StatusChangeDetails(target);
 
@@ -228,6 +240,16 @@ public class BattleSystem : MonoBehaviour
 		} 
 		else 
 			EXITstate(true);
+	}
+
+	private bool CheckIfMoveHit(MoveClass move, PokemonClass source, PokemonClass target)
+	{
+		float moveAcc = move.data.accuracy;
+
+		int accuracy = target.statBoosts[stat.accuracy];
+		int evasion = target.statBoosts[stat.accuracy];
+
+		return UnityEngine.Random.Range(1, 101) <= moveAcc;
 	}
 
 	private IEnumerator StatusChangeDetails(PokemonClass p)

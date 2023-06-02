@@ -12,8 +12,12 @@ public class PokemonClass
 	public Dictionary<stat, int> stats { get; private set; }
 	public Dictionary<stat, int> statBoosts { get; private set; }
 	public ConditionClass status { get; private set; }
+	public ConditionClass volatileStatus { get; private set; }
 	public Queue<string> statusChange { get; private set; }
+	public event System.Action onStatusChanged;
 
+	public int statusTime { get; set; }
+	public int volatileStatusTime { get; set; }
 	public int level { get { return Level; } }
 	public int HP { get; set; }
 
@@ -37,6 +41,8 @@ public class PokemonClass
 		HP = maxHp;
 
 		ResetStatBoost();
+		status = null;
+		volatileStatus = null;
 	}
 
 	private void ResetStatBoost()
@@ -47,7 +53,9 @@ public class PokemonClass
 			{stat.defense, 0},
 			{stat.spAttack, 0},
 			{stat.spDefense, 0},
-			{stat.speed, 0}
+			{stat.speed, 0},
+			{stat.accuracy, 0},
+			{stat.evasion, 0}
 		};
 	}
 
@@ -60,7 +68,7 @@ public class PokemonClass
 		stats.Add(stat.spDefense, Mathf.FloorToInt((data.specialDefense* level) / 100f) + 5);
 		stats.Add(stat.speed, Mathf.FloorToInt((data.speed* level) / 100f) + 5);
 
-		maxHp = Mathf.FloorToInt((data.maxHp* level) / 100f) + 10;
+		maxHp = Mathf.FloorToInt((data.maxHp* level) / 100f) + 10 + level;
 	}
 
 	private int GetStat(stat s)
@@ -110,8 +118,34 @@ public class PokemonClass
 
 	public void SetStatus(ConditionID cond)
 	{
+		if (status != null) 
+			return;
+
 		status = ConditionDatabase.conditions[cond];
+		status?.onAwakeTurn?.Invoke(this);
 		statusChange.Enqueue($"{data.pname} {status.startMessage}");
+		onStatusChanged?.Invoke();
+	}
+
+	public void RemoveStatus()
+	{
+		status = null;
+		onStatusChanged?.Invoke();
+	}
+
+	public void SetVolatileStatus(ConditionID cond)
+	{
+		if (volatileStatus != null) 
+			return;
+
+		volatileStatus = ConditionDatabase.conditions[cond];
+		volatileStatus?.onAwakeTurn?.Invoke(this);
+		statusChange.Enqueue($"{data.pname} {volatileStatus.startMessage}");
+	}
+
+	public void RemoveVolatileStatus()
+	{
+		volatileStatus = null;
 	}
 
 	public DamageDetails TakeDamage(MoveClass move, PokemonClass attackFrom)
@@ -156,14 +190,30 @@ public class PokemonClass
 	public MoveClass GetRandomMove()
 		=> moves[Random.Range(0, moves.Count)];
 
+	public bool OnStartTurn()
+	{
+		bool canExecuteMove = true;
+		if (status?.onStartTurn != null)
+			if (!status.onStartTurn(this))
+				canExecuteMove = false;
+
+		if (status?.onStartTurn != null)
+			if (!volatileStatus.onStartTurn(this))
+				canExecuteMove = false;
+
+
+		return canExecuteMove;
+	}
 	
 	public void OnEndTurn()
 	{
 		status?.onEndTurn?.Invoke(this);
+		volatileStatus?.onEndTurn?.Invoke(this);
 	}
 
 	public void OnBattleEnd()
 	{
+		volatileStatus = null;
 		ResetStatBoost();
 	}
 }

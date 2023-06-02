@@ -23,3 +23,4 @@ MonoBehaviour:
   target: 0
   effects:
     boosts: []
+    status: 3

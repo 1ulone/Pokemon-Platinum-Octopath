@@ -15,7 +15,10 @@ public class GameSystemManager : MonoBehaviour
 	private List<GameObject> allObject;
 
 	private void Awake()
-		=> i = this;
+	{ 
+		i = this;
+		ConditionDatabase.Init();
+	}
 
 	private void ChangeStateToBattle()
 	{

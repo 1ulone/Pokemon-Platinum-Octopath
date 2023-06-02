@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class BattleHUDController : MonoBehaviour
@@ -6,6 +7,7 @@ public class BattleHUDController : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI tname;
 	[SerializeField] private TextMeshProUGUI lvl;
 	[SerializeField] private HPUIController hpui;
+	[SerializeField] private Image statusIcon;
 
 	[SerializeField] private bool isPlayerPokemon;
 
@@ -20,11 +22,28 @@ public class BattleHUDController : MonoBehaviour
 		tname.text = pokemon.data.pname.ToUpper();
 		lvl.text = pokemon.level.ToString();
 		hpui.SetHP((float)pokemon.HP/pokemon.maxHp);
+		statusIcon.enabled = false;
 
 		if (isPlayerPokemon)
 		{
 			maxHPt.text = pokemon.maxHp.ToString();
 			HPt.text = pokemon.HP.ToString();
+		}
+
+		UpdateStatus();
+		pokemonm.onStatusChanged += UpdateStatus;
+	}
+
+	public void UpdateStatus()
+	{
+		if (pokemonm.status == null && statusIcon.enabled)
+		{
+			statusIcon.enabled = false;
+		} else
+		if (pokemonm.status != null && !statusIcon.enabled)
+		{
+			statusIcon.enabled = true;
+			statusIcon.sprite = GlobalVariable.instances.GetStatusIcon(pokemonm.status.id);
 		}
 	}
 

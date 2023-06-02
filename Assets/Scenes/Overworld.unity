@@ -246,6 +246,17 @@ MonoBehaviour:
   - type: 0
     sprite: {fileID: -1567312946, guid: 3e9e6666490b9ca459341f7a19b753da, type: 3}
     icon: {fileID: 944806050, guid: c3bcf41636d585042960cbb7a179c7a6, type: 3}
+  statusIcons:
+  - condition: 1
+    sprite: {fileID: 92185192, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
+  - condition: 2
+    sprite: {fileID: -554513744, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
+  - condition: 3
+    sprite: {fileID: 57053042, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
+  - condition: 4
+    sprite: {fileID: -1266755348, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
+  - condition: 5
+    sprite: {fileID: 990720765, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
 --- !u!1 &581792064
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party:
   - Data: {fileID: 11400000, guid: f1b107bfff1339948add058969b8efda, type: 2}
-    Level: 100
+    Level: 50
   - Data: {fileID: 11400000, guid: 2373fc39e5e6e4b4e8f2265d3c618502, type: 2}
     Level: 40
 --- !u!1 &646977721
@@ -530,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wildPokemon:
   - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
-    Level: 1
+    Level: 20
 --- !u!1 &969048362
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wildPokemon:
   - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
-    Level: 1
+    Level: 20
 --- !u!1 &1466605184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wildPokemon:
   - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
-    Level: 1
+    Level: 20
 --- !u!1 &1834272529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wildPokemon:
   - Data: {fileID: 11400000, guid: 71117b6402066364088be48130695a49, type: 2}
-    Level: 1
+    Level: 20
 --- !u!1 &1850074094
 GameObject:
   m_ObjectHideFlags: 0

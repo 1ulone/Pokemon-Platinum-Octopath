@@ -7,6 +7,7 @@ public class GlobalVariable : MonoBehaviour
 
 	[SerializeField] private List<material> materials;
 	[SerializeField] private List<moveSprite> moveSprites;
+	[SerializeField] private List<statusIcon> statusIcons;
 
 	private void Awake()
 	{
@@ -46,6 +47,17 @@ public class GlobalVariable : MonoBehaviour
 
 		return mm;
 	}
+
+	public Sprite GetStatusIcon(ConditionID cond)
+	{
+		Sprite s = null;
+
+		foreach(statusIcon ss in statusIcons)
+			if (ss.condition == cond)
+				s = ss.sprite;
+
+		return s;
+	}
 }						 
 
 public enum materialType
@@ -67,4 +79,11 @@ public class moveSprite
 	[SerializeField] public PokemonType type;
 	[SerializeField] public Sprite sprite;
 	[SerializeField] public Sprite icon;
+}
+
+[System.Serializable]
+public class statusIcon
+{
+	[SerializeField] public ConditionID condition;
+	[SerializeField] public Sprite sprite;
 }
