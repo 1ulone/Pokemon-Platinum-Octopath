@@ -38,15 +38,25 @@ public class MoveUI : MonoBehaviour
 	public void UpdateUI()
 	{
 		for (int i=0; i<movec.Count; i++)
+		{
+			if (movec[i].pp < 0) 
+				movec[i].pp = 0; 
+
 			move[i].pp.text = movec[i].pp.ToString();
+		}
 	}
 
 	public void OnPressed(int i)
 	{
+		if (move[i].move.pp <= 0)
+		{
+			StartCoroutine(BattleDialog.d.TypeDialog("There's no PP left for this move!"));
+			return;
+		}
+
 		GetComponent<BattleMenu>().onFIGHT();
 		GetComponent<BattleMenu>().toggleMenu(false);
-		FindObjectOfType<BattleSystem>().SetPlayerMove(move[i].move);
-		StartCoroutine(FindObjectOfType<BattleSystem>().BATTLEstate());
+		FindObjectOfType<BattleSystem>().BATTLEstate(move[i].move);
 	}
 }					  
 

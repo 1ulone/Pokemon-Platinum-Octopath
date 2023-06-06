@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,6 +9,7 @@ public class PokemonClass
 	[SerializeField] int Level;
 
 	public PokemonBaseData data { get { return Data; } }
+	public MoveClass currentMove;
 	public List<MoveClass> moves { get; set; }
 	public Dictionary<stat, int> stats { get; private set; }
 	public Dictionary<stat, int> statBoosts { get; private set; }
@@ -188,7 +190,11 @@ public class PokemonClass
 	}
 
 	public MoveClass GetRandomMove()
-		=> moves[Random.Range(0, moves.Count)];
+	{
+		var avaM = moves.Where(x => x.pp > 0).ToList();
+
+		return avaM[Random.Range(0, avaM.Count)];
+	}
 
 	public bool OnStartTurn()
 	{
@@ -197,10 +203,9 @@ public class PokemonClass
 			if (!status.onStartTurn(this))
 				canExecuteMove = false;
 
-		if (status?.onStartTurn != null)
+		if (volatileStatus?.onStartTurn != null)
 			if (!volatileStatus.onStartTurn(this))
 				canExecuteMove = false;
-
 
 		return canExecuteMove;
 	}

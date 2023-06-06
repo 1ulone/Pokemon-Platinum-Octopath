@@ -10,9 +10,12 @@ public class BattleMenu : MonoBehaviour
 
 	private bool onFight, onPkmn;
 
+	private MoveUI mui;
+
 	private void Start()
 	{
 		toggleMenu(false);
+		mui = GetComponent<MoveUI>();
 	}
 
 	private void Update()
@@ -43,8 +46,9 @@ public class BattleMenu : MonoBehaviour
 
 	public void onFIGHT()
 	{
+
 		if (!onFight)
-			LeanTween.move(moveMenu, new Vector3(0, 26, 0), 0.5f).setEaseInCubic();
+			{ LeanTween.move(moveMenu, new Vector3(0, 26, 0), 0.5f).setEaseInCubic(); mui.UpdateUI(); }
 		else 
 			LeanTween.move(moveMenu, new Vector3(0, -100, 0), 0.5f).setEaseInCubic();
 

@@ -28,7 +28,7 @@ MonoBehaviour:
     level: 0
   inGameSize: 10
   height: 20
-  width: 950
+  weight: 950
   icon: {fileID: -677030961, guid: 1b70ddb3eb69b094496c71babed1b4c8, type: 3}
   emmitsLight: 1
   lightColor: {r: 2.9960785, g: 0, b: 0.17254902, a: 1}

@@ -27,15 +27,15 @@ MonoBehaviour:
   learnables:
   - move: {fileID: 11400000, guid: bcf4e87b34dafd24aa7817eaea469493, type: 2}
     level: 0
-  - move: {fileID: 11400000, guid: ebaafefafc2864b4898d0f39447649fc, type: 2}
+  - move: {fileID: 11400000, guid: 124aa8219cef92545b03baa7be014047, type: 2}
     level: 0
   - move: {fileID: 11400000, guid: 936aa98571b28a94e99bf48f7cc316d2, type: 2}
     level: 0
   - move: {fileID: 11400000, guid: 34cf6eb1abafcb74b83398f1702fa29c, type: 2}
     level: 0
   inGameSize: 32
-  height: 0
-  width: 0
+  height: 0.5
+  weight: 6.2
   icon: {fileID: 130398855, guid: 1b70ddb3eb69b094496c71babed1b4c8, type: 3}
   emmitsLight: 1
   lightColor: {r: 2, g: 1.027451, b: 0, a: 1}

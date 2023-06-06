@@ -12,8 +12,10 @@ public class MoveBaseData : ScriptableObject
 	[SerializeField] public int accuracy;
 	[SerializeField] public int power;
 	[SerializeField] public int priority;
+	[SerializeField] public bool alwaysHit;
 	[SerializeField] public MoveCategory category;
 	[SerializeField] public MoveTarget target;
+	[SerializeField] public List<SecondaryEffects> secondaryEffects;
 	[SerializeField] public MoveEffects effects;
 }							
 
@@ -23,6 +25,13 @@ public class MoveEffects
 	[SerializeField] public List<statBoosts> boosts;
 	[SerializeField] public ConditionID status;
 	[SerializeField] public ConditionID volatileStatus;
+}
+
+[System.Serializable]
+public class SecondaryEffects : MoveEffects
+{
+	[SerializeField] public int chance;
+	[SerializeField] public MoveTarget target;
 }
 
 [System.Serializable]

@@ -23,7 +23,7 @@ public class PokemonBaseData : ScriptableObject
 
 	[SerializeField] public int inGameSize;
 	[SerializeField] public float height;
-	[SerializeField] public float width;
+	[SerializeField] public float weight;
 	[SerializeField] public Sprite icon;
 
 	[Header("Glow or not")]

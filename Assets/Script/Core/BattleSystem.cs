@@ -4,8 +4,17 @@ using UnityEngine;
 public enum state
 {
 	action,
-	battle,
+	onturn,
+	busy,
 	exit
+}
+
+public enum BattleAction 
+{
+	fight,
+	switchP,
+	useItem,
+	run
 }
 
 public class BattleSystem : MonoBehaviour
@@ -28,12 +37,15 @@ public class BattleSystem : MonoBehaviour
 	public PokemonClass PlayerCurrentPokemon { get { return playerUnit.pokemon; } }
 
 	private state state;
+	private state? prevState;
 	private MoveClass playerMove;
 	private MoveClass opponentMove;
 
 	private PokemonParty playerParty;
 	private PokemonParty opponentParty;
 	private PokemonClass opponentPokemon;
+
+	private PokemonClass selectedPokemon;
 
 	private void Awake()
 	{
@@ -52,14 +64,16 @@ public class BattleSystem : MonoBehaviour
 
 	public IEnumerator SetupBattle()
 	{
-		playerUnit.Setup(playerParty.GetPokemon());
-		moveOptions.Setup(playerUnit.pokemon.moves);
+		var pplayer = playerParty.GetPokemon();
+		BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, opponentPokemon.data.inGameSize);
 
 		opponentUnit.Setup(opponentPokemon);
-
-		BattleCamera.cam.SetBattleCamera(playerUnit.pokemon.data.inGameSize, opponentUnit.pokemon.data.inGameSize);
-
 		yield return dialog.TypeDialog($"a wild {opponentUnit.pname} appeared!");
+		yield return new WaitForSeconds(1f);
+		
+		playerUnit.Setup(playerParty.GetPokemon());
+		moveOptions.Setup(playerUnit.pokemon.moves);
+		yield return dialog.TypeDialog($"{playerUnit.pname} go!");
 		ACTIONstate();
 	}
 
@@ -71,12 +85,27 @@ public class BattleSystem : MonoBehaviour
 		menu.toggleMenu(true);
 	}
 
-	public IEnumerator BATTLEstate()
+	public void BATTLEstate(MoveClass selectedMove)
 	{
-		state = state.battle;
-		yield return BattleCamera.cam.ChangeState(camState.onAttack);
-		ChooseFirstTurn();
+		playerMove = selectedMove;
+		StartCoroutine(ExecuteTurn(BattleAction.fight));
 	}	
+
+	public void SWITCHPOKEMONstate(PokemonClass p)
+	{ 
+		prevState = state;
+
+		if (prevState == state.action)
+		{
+			prevState = null;
+			StartCoroutine(ExecuteTurn(BattleAction.switchP));
+		}
+		else 
+		{
+			state = state.busy;
+			StartCoroutine(SwitchPokemon(p));
+		}
+	}
 
 	private void EXITstate(bool w)
 	{
@@ -85,22 +114,12 @@ public class BattleSystem : MonoBehaviour
 		GameSystemManager.i.ExitBattle(w);
 	}
 
-	private void ChooseFirstTurn()
-	{
-		if (playerUnit.pokemon.speed >= opponentUnit.pokemon.speed)
-			StartCoroutine(PlayerTurn());
-		else
-			StartCoroutine(OpponentTurn());
-	}
-
 	public IEnumerator SwitchPokemon(PokemonClass newPokemon)
 	{
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 
-		bool currentPokemonFainted = true;
 		if (playerUnit.pokemon.HP > 0)
 		{
-			currentPokemonFainted = false;
 			yield return dialog.TypeDialog($"Come back {playerUnit.pname}");
 			playerUnit.FaintAnimation();
 			yield return new WaitForSeconds(1f);
@@ -109,35 +128,71 @@ public class BattleSystem : MonoBehaviour
 		playerUnit.Setup(newPokemon);
 		moveOptions.Setup(newPokemon.moves);
 		yield return dialog.TypeDialog($"Go {playerUnit.pname}!");
-
-		if (currentPokemonFainted)
-			ChooseFirstTurn();
-		else
-			StartCoroutine(OpponentTurn());
+ 
+		state = state.onturn;
 	}
 
-	public void SetPlayerMove(MoveClass move)
-		=> playerMove = move;
 
-	private IEnumerator PlayerTurn()
+	private IEnumerator ExecuteTurn(BattleAction playerAction)
 	{
-		state = state.battle;
+		state = state.onturn; 
 
-		moveOptions.UpdateUI();
+		//PLAYER ACTION TO BATTTLE!!!
+		if (playerAction == BattleAction.fight)
+		{
+			playerUnit.pokemon.currentMove = playerMove;
+			opponentUnit.pokemon.currentMove = opponentUnit.pokemon.GetRandomMove();
 
-		yield return ExecuteMove(playerUnit, opponentUnit, playerMove);
+			int ppriority = playerUnit.pokemon.currentMove.data.priority;
+			int opriority = opponentUnit.pokemon.currentMove.data.priority;
 
-		if (state == state.battle)
-			StartCoroutine(OpponentTurn());
-	}
+			//CHECK WHO GOES FIRST
+			bool playerFirst = true;
+			if (opriority > ppriority)
+				playerFirst = false;
+			else if (opriority == ppriority)
+				playerFirst = playerUnit.pokemon.speed >= opponentUnit.pokemon.speed;
 
-	private IEnumerator OpponentTurn()
-	{
-		opponentMove = opponentUnit.pokemon.GetRandomMove();
+			var firstUnit = playerFirst?playerUnit:opponentUnit;
+			var secondUnit = playerFirst?opponentUnit:playerUnit;
 
-		yield return ExecuteMove(opponentUnit, playerUnit, opponentMove); 
+			var secondPokemon = secondUnit.pokemon;
 
-		if (state == state.battle)
+			yield return BattleCamera.cam.ChangeState(camState.onAttack);
+
+	
+			//FIRST ATTACK
+			yield return ExecuteMove(firstUnit, secondUnit, firstUnit.pokemon.currentMove);
+			yield return ExecuteOnEnd(firstUnit);
+			if (state == state.exit)
+				yield break;
+
+			if (secondPokemon.HP > 0)
+			{
+				//SECOND ATTACK
+				yield return ExecuteMove(secondUnit, firstUnit, secondUnit.pokemon.currentMove);
+				yield return ExecuteOnEnd(secondUnit);
+				if (state == state.exit) yield break;
+			}
+		} 
+		else  
+		{		
+			//PLAYER ACTION TO SWITCHING POKEMON
+			if (playerAction == BattleAction.switchP)
+			{
+				state = state.busy;
+				var np = selectedPokemon;
+				yield return SwitchPokemon(np);
+			}
+
+			opponentUnit.pokemon.currentMove = opponentUnit.pokemon.GetRandomMove();
+			yield return ExecuteMove(opponentUnit, playerUnit, opponentUnit.pokemon.currentMove);
+			yield return ExecuteOnEnd(opponentUnit);
+			if (state == state.exit) yield break;
+
+		}
+
+		if (state != state.exit)
 			ACTIONstate();
 	}
 
@@ -151,62 +206,65 @@ public class BattleSystem : MonoBehaviour
 			yield break;
 		}
 		yield return StatusChangeDetails(source.pokemon);
-
 		yield return dialog.TypeDialog($"{source.pname} use {move.data.mname}");
-		yield return BattleCamera.cam.ChangeState(camState.onAttack);
-
-		move.pp--;
-		if (move.data.category == MoveCategory.Status)
+		
+		if (CheckIfMoveHit(move, source.pokemon, target.pokemon))
 		{
-			yield return ExecuteMoveEffects(move, source.pokemon, target.pokemon, source.isPlayer?true:false);
+
+			yield return BattleCamera.cam.ChangeState(camState.onAttack);
+
+			move.pp--;
+			if (move.data.category == MoveCategory.Status)
+			{
+				yield return ExecuteMoveEffects(move.data.effects, source.pokemon, target.pokemon, move.data.target, source.isPlayer?true:false);
+			}
+			else
+			{
+				yield return BattleCamera.cam.ChangeState(source.isPlayer?camState.onZoomEnemy:camState.onZoomPlayer);
+				DamageDetails details = target.pokemon.TakeDamage(move, source.pokemon);
+				target.HUD.UpdateHP();
+				StartCoroutine(target.hitEffect());
+				yield return ShowDamageDetails(details);
+			}
+	
+			if (move.data.secondaryEffects != null && move.data.secondaryEffects.Count > 0 && target.pokemon.HP > 0)
+			{
+				foreach (var s in move.data.secondaryEffects)
+				{
+					var rnd = UnityEngine.Random.Range(1, 101);
+					if (rnd <= s.chance)
+						yield return ExecuteMoveEffects(s, source.pokemon, target.pokemon, s.target, source.isPlayer?true:false);
+				}
+			}
+
+			if (target.pokemon.HP <= 0)
+			{ 
+				yield return dialog.TypeDialog($"{target.pname} Fainted"); 
+				target.FaintAnimation();
+				yield return BattleCamera.cam.ChangeState(camState.onAttack);
+				yield return new WaitForSeconds(1f);
+	
+				CheckBattleEnd(target);
+			}
+
 		}
-		else
+		else 
 		{
-			yield return BattleCamera.cam.ChangeState(source.isPlayer?camState.onZoomEnemy:camState.onZoomPlayer);
-			DamageDetails details = target.pokemon.TakeDamage(move, source.pokemon);
-			target.HUD.UpdateHP();
-			StartCoroutine(target.hitEffect());
-			yield return ShowDamageDetails(details);
+			yield return dialog.TypeDialog($"{source.pname} attacks missed!");
 		}
-
-		if (target.pokemon.HP <= 0)
-		{ 
-			yield return dialog.TypeDialog($"{target.pname} Fainted"); 
-			target.FaintAnimation();
-			yield return BattleCamera.cam.ChangeState(camState.onAttack);
-			yield return new WaitForSeconds(1f);
-
-			CheckBattleEnd(target);
-		}
-
-		source.pokemon.OnEndTurn();
-		yield return StatusChangeDetails(source.pokemon);
-		source.HUD.UpdateHP();
-
-		if (source.pokemon.HP <= 0)
-		{ 
-			yield return dialog.TypeDialog($"{source.pname} Fainted"); 
-			source.FaintAnimation();
-			yield return BattleCamera.cam.ChangeState(camState.onAttack);
-			yield return new WaitForSeconds(1f);
-
-			CheckBattleEnd(source);
-		}
-
-		yield return BattleCamera.cam.ChangeState(camState.onAttack);
 	}
 
-	private IEnumerator ExecuteMoveEffects(MoveClass move, PokemonClass source, PokemonClass target, bool isP)
+	private IEnumerator ExecuteMoveEffects(MoveEffects move, PokemonClass source, PokemonClass target, MoveTarget mt, bool isP)
 	{
-		var effects = move.data.effects;
+		var effects = move;
 		if (effects.boosts != null) //BOOST STAT
 		{
-			if (move.data.target == MoveTarget.Self)
+			if (mt == MoveTarget.Self)
 			{
 				source.ApplyBoosts(effects.boosts); 
 				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomPlayer:camState.onZoomEnemy);
 			} else
-			if (move.data.target == MoveTarget.Foe)
+			if (mt == MoveTarget.Foe)
 			{
 				target.ApplyBoosts(effects.boosts);
 				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomEnemy:camState.onZoomPlayer);
@@ -242,12 +300,51 @@ public class BattleSystem : MonoBehaviour
 			EXITstate(true);
 	}
 
+	private IEnumerator ExecuteOnEnd(BattleUnit source)
+	{
+		if (state == state.exit)
+			yield break;
+
+		yield return new WaitUntil(() => state == state.onturn);
+
+		source.pokemon.OnEndTurn();
+		yield return StatusChangeDetails(source.pokemon);
+		source.HUD.UpdateHP();
+
+		if (source.pokemon.HP <= 0)
+		{ 
+			yield return dialog.TypeDialog($"{source.pname} Fainted"); 
+			source.FaintAnimation();
+			yield return BattleCamera.cam.ChangeState(camState.onAttack);
+			yield return new WaitForSeconds(1f);
+
+			CheckBattleEnd(source);
+		}
+
+		yield return BattleCamera.cam.ChangeState(camState.onAttack);
+	}
+
 	private bool CheckIfMoveHit(MoveClass move, PokemonClass source, PokemonClass target)
 	{
+		if (move.data.alwaysHit)
+			return true;
+
 		float moveAcc = move.data.accuracy;
 
 		int accuracy = target.statBoosts[stat.accuracy];
 		int evasion = target.statBoosts[stat.accuracy];
+
+		var boostsVal = new float[] { 1f, 1.5f, 2f, 2.5f, 3f, 3.5f, 4f };
+
+		if (accuracy > 0)
+			moveAcc *= boostsVal[accuracy]; 
+		else 
+			moveAcc /= boostsVal[-accuracy];
+
+		if (evasion > 0)
+			moveAcc /= boostsVal[evasion]; 
+		else 
+			moveAcc *= boostsVal[-evasion];
 
 		return UnityEngine.Random.Range(1, 101) <= moveAcc;
 	}

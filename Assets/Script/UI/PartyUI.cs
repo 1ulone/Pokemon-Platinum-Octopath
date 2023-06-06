@@ -111,7 +111,7 @@ public class PartyUI : MonoBehaviour
 			return;
 		}
 		
-		StartCoroutine(BattleSystem.instances.SwitchPokemon(selectedPokemon));
+		BattleSystem.instances.SWITCHPOKEMONstate(selectedPokemon);
 		ExitUI();
 	}
 

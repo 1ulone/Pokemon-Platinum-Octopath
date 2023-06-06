@@ -19,8 +19,10 @@ MonoBehaviour:
   accuracy: 75
   power: 0
   priority: 0
+  alwaysHit: 0
   category: 0
   target: 0
   effects:
     boosts: []
     status: 3
+    volatileStatus: 0

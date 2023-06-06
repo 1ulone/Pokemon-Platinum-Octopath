@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using CameraShake;
 
 public class BattleUnit : MonoBehaviour
 {
+	[SerializeField] BounceShake.Params shakeParams;
+
 	[SerializeField] private int level;
 	[SerializeField] private bool isPlayerPokemon;
 	[SerializeField] private BattleHUDController hud;
@@ -25,6 +28,12 @@ public class BattleUnit : MonoBehaviour
 		emmision.enabled = false;
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+			CameraShaker.Shake(new BounceShake(shakeParams));
+	}
+
 	public void Setup(PokemonClass pokemon)
 	{
 		this.pokemon = pokemon;
@@ -37,6 +46,8 @@ public class BattleUnit : MonoBehaviour
 			anim.Play("front");
 
 		hud.SetData(pokemon);
+		shakeParams.freq = pokemon.data.weight; 
+		shakeParams.numBounces = (int)shakeParams.freq/2;
 
 		//Check for Emmision
 		if (pokemon.data.emmitsLight)
@@ -54,8 +65,23 @@ public class BattleUnit : MonoBehaviour
 			emmision.enabled = false; 
 		}
 
-		if (transform.localScale == Vector3.zero)
-			LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.4f).setEaseOutQuart();
+		StartCoroutine(EnterAnimation());
+	}
+
+	public IEnumerator EnterAnimation()
+	{
+		transform.localScale = Vector3.zero;
+		transform.position = new Vector3(transform.position.x, 1.25f, transform.position.z);
+		LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.4f).setEaseOutQuart();
+
+		yield return new WaitUntil(() => this.gameObject.transform.localScale == new Vector3(1, 1, 1));
+
+		LeanTween.moveY(this.gameObject, 0, 0.5f).setEaseInQuart();
+		yield return new WaitUntil(() => this.gameObject.transform.position.y <= 0.5f);
+		if (pokemon.data.weight <= 50)
+			yield break;
+
+		CameraShaker.Shake(new BounceShake(shakeParams));
 	}
 
 	public void FaintAnimation()
@@ -82,6 +108,5 @@ public class BattleUnit : MonoBehaviour
 
 		yield return new WaitForSeconds(0.5f);
 		LeanTween.move(this.gameObject, origPos, 0.5f).setEaseInQuad();
-
 	}
 }						  

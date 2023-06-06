@@ -34,8 +34,8 @@ MonoBehaviour:
   - move: {fileID: 11400000, guid: 031a0105b3abebf4caa6cb2ef5cf3cbd, type: 2}
     level: 0
   inGameSize: 24
-  height: 0
-  width: 0
+  height: 1.6
+  weight: 52
   icon: {fileID: -558460266, guid: 1b70ddb3eb69b094496c71babed1b4c8, type: 3}
   emmitsLight: 0
   lightColor: {r: 32, g: 10.917647, b: 0, a: 1}
