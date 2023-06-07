@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.VFX;
 using UnityEngine;
 
 public class GlobalVariable : MonoBehaviour
@@ -8,6 +9,7 @@ public class GlobalVariable : MonoBehaviour
 	[SerializeField] private List<material> materials;
 	[SerializeField] private List<moveSprite> moveSprites;
 	[SerializeField] private List<statusIcon> statusIcons;
+	[SerializeField] private List<visualAsset> visuals;
 
 	private void Awake()
 	{
@@ -58,6 +60,18 @@ public class GlobalVariable : MonoBehaviour
 
 		return s;
 	}
+
+	public VisualEffectAsset GetVisualAsset(string tag)
+	{
+		VisualEffectAsset vv = null;
+		
+		foreach(visualAsset v in visuals)
+			if (v.tag.ToUpper() == tag.ToUpper())
+				vv = v.vfx;
+
+		return vv;
+	}
+
 }						 
 
 public enum materialType
@@ -86,4 +100,11 @@ public class statusIcon
 {
 	[SerializeField] public ConditionID condition;
 	[SerializeField] public Sprite sprite;
+}
+
+[System.Serializable]
+public class visualAsset
+{
+	[SerializeField] public string tag;
+	[SerializeField] public VisualEffectAsset vfx;
 }

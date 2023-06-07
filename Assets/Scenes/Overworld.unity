@@ -257,6 +257,9 @@ MonoBehaviour:
     sprite: {fileID: -1266755348, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
   - condition: 5
     sprite: {fileID: 990720765, guid: d1c18dc8400ada14c86e7a8a7fb8733e, type: 3}
+  visuals:
+  - tag: PokeballOUT
+    vfx: {fileID: 8926484042661614526, guid: 10bcdcc5e32061c40a32103ff6ba9763, type: 3}
 --- !u!1 &581792064
 GameObject:
   m_ObjectHideFlags: 0

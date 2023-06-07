@@ -15,6 +15,7 @@ MonoBehaviour:
   pname: Eternatus
   description: 
   animator: {fileID: 9100000, guid: d4d2b1c05ba01b048899922d3a1bfbbe, type: 2}
+  baseSprite: {fileID: 1379799042, guid: f668a506e024c35408ddc7c035a3c836, type: 3}
   type1: 8
   type2: 15
   maxHp: 140

@@ -1,0 +1,133 @@
+digraph G {
+node0 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float2 ((48.00, 48.00))
+Count_a"]
+node1 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float2 ((0.00, 0.00))
+Delay_a"]
+node2 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((-0.01, 1.40, -0.02))
+bounds_center"]
+node3 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((3.00, 3.96, 3.06))
+bounds_size"]
+node4 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.50, 0.50, 0.50))
+boundsPadding"]
+node5 [shape="box" color="cyan" style="filled" label="VFXMeshValue Mesh (29546)
+mesh"]
+node6 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Uint32 (4294967295)
+subMeshMask"]
+node7 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.00, 0.00, 0.00))
+bounds_center
+boundsPadding
+bounds_center
+boundsPadding"]
+node8 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((1.00, 1.00, 1.00))
+bounds_size
+bounds_size"]
+node9 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (1)
+Lifetime_a
+arcTorus_torus_majorRadius_a
+volumeFactor_a
+colliderSign_b
+volumeFactor_a"]
+node10 [shape="box" color="cyan" style="filled" label="VFXBuiltInExpression Float (DeltaTime)
+deltaTime_a
+deltaTime_a
+deltaTime_b
+deltaTime_c
+deltaTime_d
+deltaTime_a"]
+node11 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((1500.00, 1500.00, 1500.00))
+Scale_a"]
+node12 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeCurve Float4
+Scale_x_b"]
+node13 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Curve (UnityEngine.AnimationCurve)"]
+node14 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeCurve Float4
+Scale_y_b"]
+node15 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Curve (UnityEngine.AnimationCurve)"]
+node16 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeCurve Float4
+Scale_z_b"]
+node17 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 Curve (UnityEngine.AnimationCurve)"]
+node18 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((1.35, 5.55, 5.99))
+Color_c"]
+node19 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float2
+Color_d"]
+node20 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node21 [shape="box" color="cyan" style="filled" label="VFXTexture2DValue Texture2D (29544)
+mainTexture"]
+node22 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Matrix4x4 (1.00000	0.00000	0.00000	0.00000
+0.00000	0.50000	-0.86603	0.00000
+0.00000	0.86603	0.50000	0.00000
+0.00000	0.00000	0.00000	1.00000
+)
+arcTorus_torus_transform_a
+arcTorus_torus_inverseTranspose_a"]
+node23 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.1)
+arcTorus_torus_minorRadius_a
+r_a"]
+node24 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (6.28)
+arcTorus_arc_a"]
+node25 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((-2.00, 3.00, -2.00))
+A_b"]
+node26 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((2.00, 3.00, 2.00))
+B_b"]
+node27 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (5)
+Lifetime_c"]
+node28 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.005)
+A_d"]
+node29 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.025)
+B_d"]
+node30 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((10.00, 10.00, 10.00))
+Scale_a
+Scale_a"]
+node31 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((4.27, 23.97, 22.33))
+Color_b
+Color_b"]
+node32 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float2
+Color_c"]
+node33 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node34 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.5)
+alphaThreshold
+Bounce_b
+Roughness_b
+B_b
+alphaThreshold"]
+node35 [shape="box" color="cyan" style="filled" label="VFXTexture2DValue Texture2D (896)
+mainTexture"]
+node36 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.00, -5.00, 0.00))
+Force_a"]
+node37 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.00, 0.10, 0.00))
+Plane_position_b"]
+node38 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float3 ((0.00, 1.00, 0.00))
+Plane_normal_b"]
+node39 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0)
+Friction_b
+LifetimeLoss_b
+radius_b"]
+node40 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float4 ((0.00, 1.00, 0.00, 0.10))
+plane_b"]
+node41 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (6.283185)
+arcSphere_arc_a"]
+node42 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Matrix4x4 (2.00000	0.00000	0.00000	0.00000
+0.00000	2.00000	0.00000	0.00000
+0.00000	0.00000	2.00000	0.00000
+0.00000	0.00000	0.00000	1.00000
+)
+transform_a"]
+node43 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Matrix4x4 (0.50000	0.00000	0.00000	0.00000
+0.00000	0.50000	0.00000	0.00000
+0.00000	0.00000	0.50000	0.00000
+0.00000	0.00000	0.00000	1.00000
+)
+inverseTranspose_a"]
+node44 [shape="box" color="steelblue" style="filled" label="VFXValue`1 Float (0.2)
+A_b"]
+node45 [shape="box" color="cyan" style="filled" label="VFXExpressionBakeGradient Float2
+Color_c"]
+node46 [shape="box" color="lightslategray" style="filled" label="VFXValue`1 ColorGradient (UnityEngine.Gradient)"]
+node47 [shape="box" color="cyan" style="filled" label="VFXTexture2DValue Texture2D (896)
+mainTexture"]
+node13 -> node12 
+node15 -> node14 
+node17 -> node16 
+node20 -> node19 
+node33 -> node32 
+node46 -> node45 
+}

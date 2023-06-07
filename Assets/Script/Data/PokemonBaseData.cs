@@ -8,6 +8,7 @@ public class PokemonBaseData : ScriptableObject
 	[TextArea][SerializeField] public string description;
 
 	[SerializeField] public RuntimeAnimatorController animator;
+	[SerializeField] public Sprite baseSprite;
 
 	[SerializeField] public PokemonType type1;
 	[SerializeField] public PokemonType type2;

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 using CameraShake;
 
 public class BattleUnit : MonoBehaviour
@@ -9,6 +10,7 @@ public class BattleUnit : MonoBehaviour
 	[SerializeField] private int level;
 	[SerializeField] private bool isPlayerPokemon;
 	[SerializeField] private BattleHUDController hud;
+	[SerializeField] private VisualEffect vfx;
 
 	public bool isPlayer { get { return isPlayerPokemon; } }
 	public string pname { get; private set; }
@@ -70,6 +72,15 @@ public class BattleUnit : MonoBehaviour
 
 	public IEnumerator EnterAnimation()
 	{
+		float vfxSize = pokemon.data.inGameSize==32?0.1f:(pokemon.data.inGameSize==24?0.2f:0.5f);
+
+
+		vfx.transform.position = transform.position + new Vector3(0, pokemon.data.baseSprite.bounds.size.y/2, 0);
+		vfx.visualEffectAsset = GlobalVariable.instances.GetVisualAsset("PokeballOUT");
+		vfx.SetVector3("Cpos", new Vector3(0, -transform.position.y, 0));
+		vfx.SetFloat("Size", vfxSize);
+		vfx.Play();
+
 		transform.localScale = Vector3.zero;
 		transform.position = new Vector3(transform.position.x, 1.25f, transform.position.z);
 		LeanTween.scale(this.gameObject, new Vector3(1, 1, 1), 0.4f).setEaseOutQuart();

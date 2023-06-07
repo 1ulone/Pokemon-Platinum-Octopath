@@ -16,6 +16,7 @@ MonoBehaviour:
   description: When trying to protect someone, it extends its elbows as if they were
     swords and fights savagely.
   animator: {fileID: 9100000, guid: 813879d0467b0214d936971e38751cac, type: 2}
+  baseSprite: {fileID: -1109823212, guid: 586d5ce5db468c14ba07be46483819b9, type: 3}
   type1: 11
   type2: 7
   maxHp: 68
