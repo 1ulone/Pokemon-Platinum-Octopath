@@ -72,12 +72,11 @@ public class BattleUnit : MonoBehaviour
 
 	public IEnumerator EnterAnimation()
 	{
-		float vfxSize = pokemon.data.inGameSize==32?0.1f:(pokemon.data.inGameSize==24?0.2f:0.5f);
-
+		float vfxSize = pokemon.data.inGameSize==32?0.1f:(pokemon.data.inGameSize==24?0.15f:0.35f);
 
 		vfx.transform.position = transform.position + new Vector3(0, pokemon.data.baseSprite.bounds.size.y/2, 0);
 		vfx.visualEffectAsset = GlobalVariable.instances.GetVisualAsset("PokeballOUT");
-		vfx.SetVector3("Cpos", new Vector3(0, -transform.position.y, 0));
+		vfx.SetVector3("Cpos", new Vector3(0, -vfx.transform.position.y, 0));
 		vfx.SetFloat("Size", vfxSize);
 		vfx.Play();
 
