@@ -11,4 +11,9 @@ public class PlayerAnimationEvent : MonoBehaviour
 	{
 		con.CheckForEncounter();
 	}
+
+	private void FootstepMark()
+	{
+		con.CreateFootstep();
+	}
 }									
