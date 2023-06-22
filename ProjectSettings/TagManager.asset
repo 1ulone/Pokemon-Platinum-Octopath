@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Collider
   - Footable
-  - 
+  - TransparentObject
   - 
   - 
   - 
