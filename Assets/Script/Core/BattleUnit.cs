@@ -36,9 +36,9 @@ public class BattleUnit : MonoBehaviour
 			CameraShaker.Shake(new BounceShake(shakeParams));
 	}
 
-	public void Setup(PokemonClass pokemon)
+	public void Setup(PokemonClass p)
 	{
-		this.pokemon = pokemon;
+		this.pokemon = p;
 		anim.runtimeAnimatorController = pokemon.data.animator;
 		pname = pokemon.data.pname;
 

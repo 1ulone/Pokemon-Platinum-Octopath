@@ -16,6 +16,7 @@ MonoBehaviour:
   description: The shell on its back is made of soil. On a very healthy Turtwig,
     the shell should feel moist.
   animator: {fileID: 9100000, guid: 0f626f8732bf6e94aa990309bebd880a, type: 2}
+  baseSprite: {fileID: 1867713599, guid: 56dcea95b12b9144eb85157fdb836d07, type: 3}
   type1: 14
   type2: 15
   maxHp: 100

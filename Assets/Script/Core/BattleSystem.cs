@@ -98,6 +98,7 @@ public class BattleSystem : MonoBehaviour
 		if (prevState == state.action)
 		{
 			prevState = null;
+			selectedPokemon = p;
 			StartCoroutine(ExecuteTurn(BattleAction.switchP));
 		}
 		else 

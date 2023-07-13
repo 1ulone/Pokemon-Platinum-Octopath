@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] public float speed = 5f;
 	[SerializeField] public Transform nextPoint;
 	[SerializeField] public LayerMask wildLayer;
+	[SerializeField] public LayerMask trainerLayer;
 	[SerializeField] public LayerMask colliderL;
 	[SerializeField] public LayerMask footable;
 
@@ -124,6 +125,17 @@ public class PlayerController : MonoBehaviour
 			{
 				GameSystemManager.i.SetOpponentPokemon(wa[UnityEngine.Random.Range(0, wa.Length)].GetComponent<MapArea>().GetRandomWildPokemon());
 				GameSystemManager.i.InitiateBattle();
+			}
+		}
+	}
+
+	public void CheckForTrainer()
+	{
+		Collider[] wa= Physics.OverlapSphere(transform.position, 0.5f, trainerLayer);
+		if (wa.Length > 0)
+		{
+			if (UnityEngine.Random.Range(1, 101) <= 10)
+			{
 			}
 		}
 	}
