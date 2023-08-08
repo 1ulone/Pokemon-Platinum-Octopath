@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] public float speed = 5f;
 	[SerializeField] public Transform nextPoint;
 	[SerializeField] public LayerMask wildLayer;
-	[SerializeField] public LayerMask trainerLayer;
+	[SerializeField] public LayerMask interactableLayer;
 	[SerializeField] public LayerMask colliderL;
 	[SerializeField] public LayerMask footable;
 
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 	private PlayerInput input;
 	private InputAction move;
 	private InputAction sprint;
+	private InputAction interact;
 
 	private float defaultSpeed, sprintSpeed;
 	
@@ -33,15 +34,18 @@ public class PlayerController : MonoBehaviour
 	{
 		move = input.actions["WASD"];
 		sprint = input.actions["Sprint"];
+		interact = input.actions["Interact"];
 
 		sprint.Enable();
 		move.Enable();
+		interact.Enable();
 	}
 
 	private void OnDisable()
 	{
 		sprint.Disable();
 		move.Disable();
+		interact.Disable();
 	}
 
 	private void Start()
@@ -55,6 +59,13 @@ public class PlayerController : MonoBehaviour
 	
 	private void Update()
 	{
+/////ONDIALOG
+		if (interact.WasPressedThisFrame())
+			Interact();
+
+		if (OverworldDialogManager.onDialog)
+			return;
+/////BASE
 		dir = move.ReadValue<Vector2>();
 		Move();
 		CollisionCheck();
@@ -82,6 +93,7 @@ public class PlayerController : MonoBehaviour
 		} else 
 		if ((dir.normalized.x == 0 && dir.normalized.y == 0) || dontAnimate)
 			anim.Play("idle");
+
 	}
 
 	private void Move()
@@ -102,6 +114,20 @@ public class PlayerController : MonoBehaviour
 			if (Mathf.Abs(dir.y) == 1)
 				nextPoint.position += new Vector3(0, 0, dir.y);
 		}
+	}
+
+	private void Interact()
+	{
+		var faceDir = new Vector3(anim.GetFloat("dirx"), 0, anim.GetFloat("diry"));
+		var interactPos = transform.localPosition + (faceDir*2);
+
+		var collider = Physics.OverlapSphere(interactPos, 0.25f, interactableLayer);
+		if (collider != null)
+		{
+			foreach(Collider g in collider)
+				g.GetComponent<NPCController>()?.Interact();
+		}
+		
 	}
 
 	private void CollisionCheck()
@@ -131,6 +157,7 @@ public class PlayerController : MonoBehaviour
 
 	public void CheckForTrainer()
 	{
+	/*
 		Collider[] wa= Physics.OverlapSphere(transform.position, 0.5f, trainerLayer);
 		if (wa.Length > 0)
 		{
@@ -138,6 +165,7 @@ public class PlayerController : MonoBehaviour
 			{
 			}
 		}
+		*/
 	}
 
 	public void CreateFootstep()
