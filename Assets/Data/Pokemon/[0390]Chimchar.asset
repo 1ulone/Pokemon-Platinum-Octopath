@@ -16,6 +16,7 @@ MonoBehaviour:
   description: It is very agile. Before going to sleep, it extinguishes the flame
     on its tail to prevent fires.
   animator: {fileID: 9100000, guid: 2fbf6b40b1f13c04d98bb82e1c6cd3b4, type: 2}
+  baseSprite: {fileID: 1970693615, guid: 23ecc070a4c550b45a9482e90127c2fd, type: 3}
   type1: 2
   type2: 0
   maxHp: 44

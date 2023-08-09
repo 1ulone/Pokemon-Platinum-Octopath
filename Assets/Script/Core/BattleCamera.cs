@@ -18,6 +18,8 @@ public class BattleCamera : MonoBehaviour
 	
 	[SerializeField] private Transform playerPokemon;
 	[SerializeField] private Transform opponentPokemon;
+	[SerializeField] private Transform playerTrainer; 
+	[SerializeField] private Transform opponentTrainer;
 
 	private camState state;
 
@@ -27,6 +29,10 @@ public class BattleCamera : MonoBehaviour
 	public void SetBattleCamera(int unit1, int unit2)
 	{
 		int h = unit1 <= unit2 ? unit1 : unit2;
+		if (h == 10)
+			if (unit1 == unit2) 
+				h = unit1* unit2; 
+
 		foreach(staticCameraInfo i in infos)
 			if (h == i.tag)
 				SetCameraInfo(i);
@@ -48,35 +54,42 @@ public class BattleCamera : MonoBehaviour
 
 		yield return new WaitForSeconds(0.5f);
 	}
+	////FIX THIS MAKE IT MORE DYNAMIC ORRR JUST REMOVE IT !
 
 	private void IdleCamera()
-		=> LeanTween.move(this.gameObject, currentInfo.position, 0.5f).setEaseInCubic();
+		=> LeanTween.move(this.gameObject, currentInfo.data.position, 0.5f).setEaseInCubic();
 
 	private void AttackCamera()
 	{
-		Vector3 npos = currentInfo.position + new Vector3(0, -1, 1);
+		Vector3 npos = currentInfo.data.position + new Vector3(0, -1, 1);
 		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
 	}
 
 	private void PlayerCamera()
 	{
 		float pHeight = playerPokemon.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
-		Vector3 npos = currentInfo.playerPokemonPosition + new Vector3(0, pHeight+currentInfo.playerMod, currentInfo.position.z/2f);
+		Vector3 npos = currentInfo.data.playerPokemonPosition + new Vector3(0, pHeight+currentInfo.playerMod, currentInfo.data.position.z/2f);
 		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
 	}
 
 	private void EnemyCamera()
 	{
 		float pHeight = opponentPokemon.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
-		Vector3 npos = currentInfo.opponentPokemonPosition + new Vector3(0, pHeight+currentInfo.opponentMod, currentInfo.position.z/2f);
+		Vector3 npos = currentInfo.data.opponentPokemonPosition + new Vector3(0, pHeight+currentInfo.opponentMod, currentInfo.data.position.z/2f);
 		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
 	}
 
 	private void SetCameraInfo(staticCameraInfo cInfo)
 	{
-		this.transform.position = cInfo.position;
-		playerPokemon.position = cInfo.playerPokemonPosition;
-		opponentPokemon.position = cInfo.opponentPokemonPosition;
+		BattleCameraData data = cInfo.data;
+		this.transform.position = data.position;
+		playerPokemon.position = data.playerPokemonPosition;
+		opponentPokemon.position = data.opponentPokemonPosition;
+
+		playerTrainer.position = data.playerTrainerPosition;
+		if (opponentTrainer.gameObject.activeSelf)
+			opponentTrainer.position = data.opponentTrainerPosition;
+
 		currentInfo = cInfo;
 	}
 
@@ -86,9 +99,7 @@ public class BattleCamera : MonoBehaviour
 public class staticCameraInfo
 {
 	[SerializeField] public float tag;
-	[SerializeField] public Vector3 position;
-	[SerializeField] public Vector3 playerPokemonPosition;
-	[SerializeField] public Vector3 opponentPokemonPosition;
+	[SerializeField] public BattleCameraData data;
 
 	[SerializeField] public float playerMod;
 	[SerializeField] public float opponentMod;

@@ -1,0 +1,905 @@
+fileFormatVersion: 2
+guid: f702036d8d00be04caded4f6f4541b76
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0376metagross-backrare_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f73151c4077d246a53e539a18dc1ff
+      internalID: 1164775597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 336
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e0ff94de5216d48923cf37af7904d0
+      internalID: 458888825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 336
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad56f09a98fc6e4ebfdb36e674b6a3f
+      internalID: 1540011329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 336
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577435a077ed46e4f8eb2c31116c0c87
+      internalID: 258113116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 336
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0e7425d83ce06448ea33214dc9da36
+      internalID: 70587568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d66e2831424c3441ad3844893f11cf1
+      internalID: -1249600433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 280
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72b94bd9e67efd47ae268705bbd4eb6
+      internalID: -985560508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_7
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 280
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613620de7688f664db941c56055ea20b
+      internalID: -1881852056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 280
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52e941366269c249a6de707bcb9add1
+      internalID: -1900857479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 280
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7151530d3c67d47a4f6489fb7401fe
+      internalID: -1913377673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e088518c804a4cc479381c55a18f6f77
+      internalID: 1005136871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_11
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 224
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e2d8fcc99fc0a42a4d8102fee9ffe8
+      internalID: -703287178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_12
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 224
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e882a99c007f240a8d38a6a2fe635c
+      internalID: 2075156002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_13
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 224
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a48b6d5287214428ee1593296ecd23
+      internalID: 1448230709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_14
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 224
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd675979744642b49a71bb41dbd1215e
+      internalID: -1693074893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326ed2dfd191e3e47a8bb4637d0b1145
+      internalID: 1705201382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_16
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 168
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a8f58a16ee2e24f8eea8c7d0031081
+      internalID: -1524767975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 168
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6f1a51aa559294f952c0f7e75ae38a
+      internalID: -1545680815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_18
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 168
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016a7ccb295a66542ae67a61310fe7b3
+      internalID: -1815341173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_19
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 168
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091c35802194f564095cdc4934091b65
+      internalID: -1888255231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b8d8de53ff63a43a1f1c7f51454194
+      internalID: 1194202135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_21
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 112
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11ee028566da074990ac83b89113d02
+      internalID: -1757889033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_22
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 112
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c824e7c5db479d42b8802482e45e5b6
+      internalID: -196818336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_23
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 112
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39165dc52650c1439888ae3aad6aeae
+      internalID: 835512846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_24
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 112
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8da976e7c2b794191cb235f243bf39
+      internalID: -915539316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b020b50bb9fdf3148819c3a95010e708
+      internalID: 277416857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_26
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 56
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e84d81dafc7f1f48ae9fef0a8cf7ccf
+      internalID: 861752504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_27
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 56
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1923876341525604ba77d7fd4b39e5a8
+      internalID: 617579570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_28
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 56
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f334695c8b6bc3849b21ea72a27ccfae
+      internalID: 1061813268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_29
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 56
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcf7a33fa216234eb82f19136018283
+      internalID: -2013847880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20e7ae0e0237424fbefafe226b824da
+      internalID: 218391801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_31
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b634d9e83f0250c4ba6a640b078417a1
+      internalID: -64009749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_32
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 0
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04d1755f256c1c41b54ba71c0e8bf88
+      internalID: 1914457492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_33
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 0
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c52418dd9e907749b3034f3473d4ad7
+      internalID: -1020343429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-backrare_34
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 0
+        width: 83
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a979f8fdf8ec2464d8b0d7a32c025310
+      internalID: -1825806362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      0376metagross-backrare_0: 1164775597
+      0376metagross-backrare_1: 458888825
+      0376metagross-backrare_10: 1005136871
+      0376metagross-backrare_11: -703287178
+      0376metagross-backrare_12: 2075156002
+      0376metagross-backrare_13: 1448230709
+      0376metagross-backrare_14: -1693074893
+      0376metagross-backrare_15: 1705201382
+      0376metagross-backrare_16: -1524767975
+      0376metagross-backrare_17: -1545680815
+      0376metagross-backrare_18: -1815341173
+      0376metagross-backrare_19: -1888255231
+      0376metagross-backrare_2: 1540011329
+      0376metagross-backrare_20: 1194202135
+      0376metagross-backrare_21: -1757889033
+      0376metagross-backrare_22: -196818336
+      0376metagross-backrare_23: 835512846
+      0376metagross-backrare_24: -915539316
+      0376metagross-backrare_25: 277416857
+      0376metagross-backrare_26: 861752504
+      0376metagross-backrare_27: 617579570
+      0376metagross-backrare_28: 1061813268
+      0376metagross-backrare_29: -2013847880
+      0376metagross-backrare_3: 258113116
+      0376metagross-backrare_30: 218391801
+      0376metagross-backrare_31: -64009749
+      0376metagross-backrare_32: 1914457492
+      0376metagross-backrare_33: -1020343429
+      0376metagross-backrare_34: -1825806362
+      0376metagross-backrare_4: 70587568
+      0376metagross-backrare_5: -1249600433
+      0376metagross-backrare_6: -985560508
+      0376metagross-backrare_7: -1881852056
+      0376metagross-backrare_8: -1900857479
+      0376metagross-backrare_9: -1913377673
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

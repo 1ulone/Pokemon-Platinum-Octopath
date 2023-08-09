@@ -1,0 +1,773 @@
+fileFormatVersion: 2
+guid: 98c986f751141f34588cd5994b58377f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 395
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fb037785c139840b1b3797dc460c74
+      internalID: 1288194678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 395
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85e2f6c81d146f4bb1b3516a4a13807
+      internalID: 1535743939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 395
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9afa2e2501ad74f94cb3ec3ffd2a1d
+      internalID: 1167781441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 395
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cf10c639bdcda41a3b2e1ed2985947
+      internalID: 313953164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 395
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c133e8d8128e642ba46319bdc187b8
+      internalID: -1064073081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf823a47dc47df44aaaafd9639b723e
+      internalID: -1216837791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 316
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4768e3f734a704c45bfebee1df7ba95c
+      internalID: 2087450891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 316
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508b3ecf99781a345a6dfe4f584ac82d
+      internalID: 1895108668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 316
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadcf4523c1e20f4eb03415e3b728254
+      internalID: -311916156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 316
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343495928bf7de94193de10cfa8a1adb
+      internalID: 1739766645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a3299b50637c146904a9409cbb562a
+      internalID: 1866125557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 237
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a26e17f2a956da4c97358d114e6aea4
+      internalID: -197986556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 237
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2ac4e1e8fcb3646b87bef6337ae7ae
+      internalID: 43822940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_13
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 237
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38882ebd8aeaacf4b82be01c9942fd0c
+      internalID: 1404479281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 237
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7b9f6868429e44eb9b12fb3cad4779
+      internalID: -865834621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0c83595eae51843a3669b914d3da23
+      internalID: 1450524749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 158
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb776c2984fe086488998ae99ad796fb
+      internalID: -1966334747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 158
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e72e62850948e84791a9b9230e82fe2
+      internalID: 1881999293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 158
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca3eb285c4ea274db13c3a7a952713f
+      internalID: -1370770357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 158
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d480b52f6b64f044b41250a8a2315df
+      internalID: -487512167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499af8eccd6cb5247be20dc21e97e342
+      internalID: 1156762338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 79
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4568de2c189c044a725dcf3476abe2
+      internalID: 1161460197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 79
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7df3a32152e3ea469d3abd2214b579e
+      internalID: 2083352143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_23
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 79
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e5942952cac4c4a9443fd1038fb0f9
+      internalID: -633062802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 79
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554afa7cf2e04d242b5a277736979f8f
+      internalID: 281004071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cd441b597437f4fa7c74d30a68f418
+      internalID: -495340788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367ca7e53bcb771459ccf6a6bc2c9b05
+      internalID: 1030712630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658057852c92c934f9975ec0a0923448
+      internalID: -1647724707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0460abomasnow-frontrare_28
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927c2fd5aa641ca4daa698dede22e65c
+      internalID: -1902736533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7e4f9db99cfc4f748a2a24a3da467934
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      0460abomasnow-frontrare_0: 1288194678
+      0460abomasnow-frontrare_1: 1535743939
+      0460abomasnow-frontrare_10: 1866125557
+      0460abomasnow-frontrare_11: -197986556
+      0460abomasnow-frontrare_12: 43822940
+      0460abomasnow-frontrare_13: 1404479281
+      0460abomasnow-frontrare_14: -865834621
+      0460abomasnow-frontrare_15: 1450524749
+      0460abomasnow-frontrare_16: -1966334747
+      0460abomasnow-frontrare_17: 1881999293
+      0460abomasnow-frontrare_18: -1370770357
+      0460abomasnow-frontrare_19: -487512167
+      0460abomasnow-frontrare_2: 1167781441
+      0460abomasnow-frontrare_20: 1156762338
+      0460abomasnow-frontrare_21: 1161460197
+      0460abomasnow-frontrare_22: 2083352143
+      0460abomasnow-frontrare_23: -633062802
+      0460abomasnow-frontrare_24: 281004071
+      0460abomasnow-frontrare_25: -495340788
+      0460abomasnow-frontrare_26: 1030712630
+      0460abomasnow-frontrare_27: -1647724707
+      0460abomasnow-frontrare_28: -1902736533
+      0460abomasnow-frontrare_3: 313953164
+      0460abomasnow-frontrare_4: -1064073081
+      0460abomasnow-frontrare_5: -1216837791
+      0460abomasnow-frontrare_6: 2087450891
+      0460abomasnow-frontrare_7: 1895108668
+      0460abomasnow-frontrare_8: -311916156
+      0460abomasnow-frontrare_9: 1739766645
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

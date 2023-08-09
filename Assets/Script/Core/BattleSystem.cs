@@ -20,6 +20,7 @@ public enum BattleAction
 public class BattleSystem : MonoBehaviour
 {
 	public static BattleSystem instances;
+	public static BattleAgainst against;
 
 	[Header("Main Component")]
 	[SerializeField] BattleUnit playerUnit;
@@ -33,6 +34,9 @@ public class BattleSystem : MonoBehaviour
 	[SerializeField] MoveUI moveOptions;
 	[SerializeField] PartyUI partyMemberUI; 
 
+	[Header("Other")]
+	[SerializeField] GameObject opponentTrainer;
+
 	public PokemonParty PlayerParty { get { return playerParty; } }
 	public PokemonClass PlayerCurrentPokemon { get { return playerUnit.pokemon; } }
 
@@ -43,7 +47,7 @@ public class BattleSystem : MonoBehaviour
 
 	private PokemonParty playerParty;
 	private PokemonParty opponentParty;
-	private PokemonClass opponentPokemon;
+//	private PokemonClass opponentPokemon;
 
 	private PokemonClass selectedPokemon;
 
@@ -52,10 +56,10 @@ public class BattleSystem : MonoBehaviour
 		instances = this;
 	}
 
-	public void StartBattle(PokemonParty pparty, PokemonClass oppoP)
+	public void StartBattle(PokemonParty pparty, PokemonParty oppoP)
 	{
 		this.playerParty = pparty;
-		this.opponentPokemon = oppoP;
+		this.opponentParty = oppoP;
 
 		partyMemberUI.InitializeUI();
 
@@ -65,11 +69,33 @@ public class BattleSystem : MonoBehaviour
 	public IEnumerator SetupBattle()
 	{
 		var pplayer = playerParty.GetPokemon();
-		BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, opponentPokemon.data.inGameSize);
+		var poppone = opponentParty.GetPokemon();
 
-		opponentUnit.Setup(opponentPokemon);
-		yield return dialog.TypeDialog($"a wild {opponentUnit.pname} appeared!");
-		yield return new WaitForSeconds(1f);
+		switch(against)
+		{
+			case BattleAgainst.wild:////WILD BATTLE
+			{
+				opponentTrainer.SetActive(false);
+				BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, poppone.data.inGameSize);
+
+				opponentUnit.Setup(poppone);
+				yield return dialog.TypeDialog($"a wild {opponentUnit.pname} appeared!");
+				yield return new WaitForSeconds(1f);
+
+			} break;
+
+			case BattleAgainst.trainer:////TRAINER BATTLE
+			{
+				opponentTrainer.SetActive(true);
+				BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, poppone.data.inGameSize);
+				yield return dialog.TypeDialog($"PKMN Trainer Dawn wants to battle!");
+
+				opponentUnit.Setup(poppone);
+				yield return dialog.TypeDialog($"Dawn sent out {opponentUnit.pname}!");
+				yield return new WaitForSeconds(1f);
+
+			} break;
+		}
 		
 		playerUnit.Setup(playerParty.GetPokemon());
 		moveOptions.Setup(playerUnit.pokemon.moves);
@@ -94,6 +120,7 @@ public class BattleSystem : MonoBehaviour
 	public void SWITCHPOKEMONstate(PokemonClass p)
 	{ 
 		prevState = state;
+		menu.toggleMenu(false);
 
 		if (prevState == state.action)
 		{
@@ -128,6 +155,7 @@ public class BattleSystem : MonoBehaviour
 
 		playerUnit.Setup(newPokemon);
 		moveOptions.Setup(newPokemon.moves);
+		BattleCamera.cam.SetBattleCamera(playerUnit.pokemon.data.inGameSize, opponentUnit.pokemon.data.inGameSize);
 		yield return dialog.TypeDialog($"Go {playerUnit.pname}!");
  
 		state = state.onturn;

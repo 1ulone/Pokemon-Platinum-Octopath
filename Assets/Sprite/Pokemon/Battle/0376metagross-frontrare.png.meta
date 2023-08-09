@@ -1,0 +1,861 @@
+fileFormatVersion: 2
+guid: e7206050c7ccd9d41bccc7923aacab88
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d545eb4159cfe4899c260188f8c107
+      internalID: 252730437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 348
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05636039fdbd2b24192a3a15b571e5c2
+      internalID: 282913073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 348
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f649e8ddc16320841a9354d126fc873a
+      internalID: -1403881848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 348
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510186611af89614ba97679e11798fe6
+      internalID: 1530810510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 348
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2653496321209144084a2ea51fbbaba7
+      internalID: -1369627815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24be6422900e9b4e9fae60a85a57912
+      internalID: 725748611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 290
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a8443ce2f57cc45b5129303297b6a3
+      internalID: 941638304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_7
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 290
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5564d0c5e018ac744b883baa1f548801
+      internalID: -1318155958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 290
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9786f982eeb8324e88da1d88c3009bd
+      internalID: -1242767403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 290
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635bdc9bf5d64554caec78495066005e
+      internalID: 1875685832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d20a74fea8ec8346828cb3ab85096c5
+      internalID: 2071637107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_11
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 232
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b55b7e60c2f7844ab19802c0268e41
+      internalID: 1810363887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_12
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 232
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdf697524ed76a42b1bf20cfc2a24a9
+      internalID: -1965728658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_13
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 232
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6ddb5cda8648a458fbbed422a2dba7
+      internalID: 1443020899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_14
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 232
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcf28d2243eb344abc437fb085472e5
+      internalID: -676541629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 174
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7e43eb80ded6342afea509b18fce7f
+      internalID: -1465138225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_16
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 174
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62af9ebb8191ad4c95b2009be3ddf57
+      internalID: -1291619069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 174
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f53deacccbef4408428cf30bc13148
+      internalID: -1212130080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_18
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 174
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b2d11528fb11945acc027f933f095f
+      internalID: 1561490193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_19
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 174
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b05c70ec3439147864dc0ff42cd9d3
+      internalID: -1428460302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd5d2592b3438449b646ddbea7cea26
+      internalID: -1381655760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_21
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 116
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f2eabde24c044418a37a7044667f3f
+      internalID: -1164055957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_22
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 116
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de72ec783dd5be41a2332c4def2b9ff
+      internalID: 785575598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_23
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 116
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2193fd8f54566c41a83045f6852fee7
+      internalID: 2083971432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_24
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 116
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c969f55b6176ba044b2a8d38d215ae49
+      internalID: -827388061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f3af0243e701749beaaba0f5cf1a78
+      internalID: 1498179244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_26
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 58
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c35e2302730244fa9564eeda0e0ccd
+      internalID: -452866690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_27
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 58
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d970ba9e7f1d1f54c9e9db8ae7d8c5e0
+      internalID: -363410980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_28
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 58
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e52e02cd164f4a4b9bb7d6b7c1b0f09
+      internalID: 1327042256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_29
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 58
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca403672eb9df3f449f98fa9f357fb74
+      internalID: -177800183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9d64e1fd4fe8f45845c78ca2315f77
+      internalID: 984253831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_31
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7575b82ad1e87c4193c4a1c172245fb
+      internalID: 137901106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0376metagross-frontrare_32
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 0
+        width: 83
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f776718c098934bb3abcd4b4a23f54
+      internalID: -1390769473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      0376metagross-frontrare_0: 252730437
+      0376metagross-frontrare_1: 282913073
+      0376metagross-frontrare_10: 2071637107
+      0376metagross-frontrare_11: 1810363887
+      0376metagross-frontrare_12: -1965728658
+      0376metagross-frontrare_13: 1443020899
+      0376metagross-frontrare_14: -676541629
+      0376metagross-frontrare_15: -1465138225
+      0376metagross-frontrare_16: -1291619069
+      0376metagross-frontrare_17: -1212130080
+      0376metagross-frontrare_18: 1561490193
+      0376metagross-frontrare_19: -1428460302
+      0376metagross-frontrare_2: -1403881848
+      0376metagross-frontrare_20: -1381655760
+      0376metagross-frontrare_21: -1164055957
+      0376metagross-frontrare_22: 785575598
+      0376metagross-frontrare_23: 2083971432
+      0376metagross-frontrare_24: -827388061
+      0376metagross-frontrare_25: 1498179244
+      0376metagross-frontrare_26: -452866690
+      0376metagross-frontrare_27: -363410980
+      0376metagross-frontrare_28: 1327042256
+      0376metagross-frontrare_29: -177800183
+      0376metagross-frontrare_3: 1530810510
+      0376metagross-frontrare_30: 984253831
+      0376metagross-frontrare_31: 137901106
+      0376metagross-frontrare_32: -1390769473
+      0376metagross-frontrare_4: -1369627815
+      0376metagross-frontrare_5: 725748611
+      0376metagross-frontrare_6: 941638304
+      0376metagross-frontrare_7: -1318155958
+      0376metagross-frontrare_8: -1242767403
+      0376metagross-frontrare_9: 1875685832
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

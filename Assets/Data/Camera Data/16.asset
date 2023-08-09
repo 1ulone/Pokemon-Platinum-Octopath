@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0685ddb0a780744a811ad9a84f0d232, type: 3}
+  m_Name: 16
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 6, z: -8.5}
+  playerPokemonPosition: {x: -2.5, y: 0, z: -3.75}
+  opponentPokemonPosition: {x: 6.25, y: 0, z: 2}
+  playerTrainerPosition: {x: -3.75, y: 0.5, z: -5.25}
+  opponentTrainerPosition: {x: 10.75, y: 1.1, z: 4.75}

@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCController : MonoBehaviour, Interactable
@@ -8,19 +8,30 @@ public class NPCController : MonoBehaviour, Interactable
 	[SerializeField] private float wanderCooldown = 5;
 	[SerializeField] private int wanderRange = 5;
 	[SerializeField] private List<Dialog> dialog;
+	[SerializeField] private List<Vector3> movePattern;
 	[SerializeField] private LayerMask colliderL;
+
+	public bool canMove { get; set; }
+	public bool isMoving { get { return onMove; } }
 
 	private bool onWall;
 	private bool onMove;
+	private bool onDialog;
+
 	private float timer;
+	private int currentPattern;
 
 	private Vector3 faceDirection;
 	private Animator anim;
 	private Coroutine coroutine;
 
-	public void Interact()
+	public void Interact(Vector3 otherPos)
 	{
-		OverworldDialogManager.d.ShowDialog(dialog, transform.position);
+		onDialog = true;
+		OverworldDialogManager.d.ShowDialog(dialog, transform.position, ()=> { onDialog = false; });
+		faceDirection = (otherPos - transform.position).normalized;
+		anim.SetFloat("moveX", faceDirection.x);
+		anim.SetFloat("moveY", faceDirection.z);
 	}
 
 	private void Start()
@@ -28,24 +39,37 @@ public class NPCController : MonoBehaviour, Interactable
 		anim = GetComponentInChildren<Animator>();
 		coroutine = null;
 		onMove = false;
+		canMove = true;
 		timer = wanderCooldown;
+		currentPattern = 0;
 	}
+
+	public void MoveTo(Vector3 pos)
+		=> coroutine = StartCoroutine(Move(pos));
 	
 	private void Update()
 	{
-		if (onMove)
+		if (onDialog)
+		{
+			if (coroutine != null)
+				StopCoroutine(coroutine); 
+			return; 
+		}
+
+		CollisionCheck();
+		if (onMove || !canMove)
 			return;
 		
+		if (movePattern.Count <= 0)
+			return;
+
 		if (timer > 0)
 			timer -= Time.deltaTime;
 
 		if (timer <= 0)
 		{
-			int xTo = Random.Range(-wanderRange, wanderRange);
-			int yTo = Random.Range(-wanderRange, wanderRange);
-			Vector3 posTo = new Vector3(xTo>yTo?xTo:0, 0, yTo>xTo?yTo:0);
 			if (coroutine == null)
-				coroutine = StartCoroutine(Move(transform.position + posTo));
+				coroutine = StartCoroutine(Move(transform.position + movePattern[currentPattern]));
 		}
 	}
 
@@ -55,7 +79,6 @@ public class NPCController : MonoBehaviour, Interactable
 			{ ResetValue(); yield break; }
 	
 		faceDirection = (tPos - transform.position).normalized;
-		CollisionCheck();
 
 		if (onWall)
 			{ ResetValue(); yield break; }
@@ -77,16 +100,29 @@ public class NPCController : MonoBehaviour, Interactable
 
 	private void ResetValue()
 	{
+		currentPattern++;
+
+		if (currentPattern >= movePattern.Count)
+			currentPattern = 0;
+
 		onMove = false;
 		anim.Play("idle");
 		coroutine = null;
 		timer = wanderCooldown;
-
 	}
 
 	private void CollisionCheck()
 	{
-		onWall = Physics.OverlapSphere(transform.position + faceDirection.normalized/2, 0.5f, colliderL).Length > 0;
+		onWall = Physics.OverlapSphere(transform.position + faceDirection.normalized/2f, 0.5f, colliderL).Length > 0;
+
+		if (onWall)
+		{
+			if (coroutine != null)
+			{ 
+				StopCoroutine(coroutine);
+				ResetValue();
+			}
+		}
 		//Debug.DrawRay(transform.position, faceDirection.normalized* 1, Color.red);
 	}
 }							 

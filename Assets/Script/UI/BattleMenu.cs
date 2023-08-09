@@ -9,7 +9,6 @@ public class BattleMenu : MonoBehaviour
 	[SerializeField] private RectTransform hp;
 
 	private bool onFight, onPkmn;
-
 	private MoveUI mui;
 
 	private void Start()

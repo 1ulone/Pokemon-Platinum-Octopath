@@ -2,6 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
+public enum BattleAgainst
+{
+	wild,
+	trainer,
+	boss
+}
+
 public class GameSystemManager : MonoBehaviour
 {
 	public static GameSystemManager i;
@@ -9,7 +16,7 @@ public class GameSystemManager : MonoBehaviour
 	[SerializeField] private List<GameObject> importantObject;
 	[SerializeField] private PlayerController playerOverworld;
 
-	private PokemonClass opponentPokemon;
+	private PokemonParty opponentParty;
 	private PokemonParty playerParty;
 
 	private List<GameObject> allObject;
@@ -44,13 +51,13 @@ public class GameSystemManager : MonoBehaviour
 
 	private void Load()
 	{
-		BattleSystem.instances.StartBattle(playerParty, opponentPokemon);
+		BattleSystem.instances.StartBattle(playerParty, opponentParty);
 	}
 
-	public void SetOpponentPokemon(PokemonClass p)
-		=> opponentPokemon = p;
+	public void SetOpponentPokemon(PokemonParty p)
+		=> opponentParty = p;
 
-	public void InitiateBattle()
+	public void InitiateBattle(BattleAgainst ba)
 	{
 		playerParty = playerOverworld.party;
 
@@ -58,6 +65,7 @@ public class GameSystemManager : MonoBehaviour
 		ChangeStateToBattle();
 
 		Invoke("Load", 0.5f);
+		BattleSystem.against = ba;
 	}
 	
 	public void ExitBattle(bool win)

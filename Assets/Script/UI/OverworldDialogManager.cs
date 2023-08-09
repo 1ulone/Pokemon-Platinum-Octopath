@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,17 +16,26 @@ public class OverworldDialogManager : MonoBehaviour
 
 	private Coroutine coroutine;
 	private int currentLine;
+	private bool Completed;
+	private Action CloseAction;
+
+	private List<Dialog> currentDialog;
 
 	private void Awake()
 	{ 
 		d = this;
+		Completed = false;
 		box.SetActive(false);
 	}
 
-	public void ShowDialog(List<Dialog> d, Vector3 pos)
+	public void ShowDialog(List<Dialog> d, Vector3 pos, Action onend = null)
 	{
 		box.SetActive(true);
 		box.transform.position = new Vector3(pos.x, pos.y + 1.75f, pos.z);
+		currentDialog = d;
+
+		if (onend != null)
+			CloseAction = onend;
 		
 		if (coroutine == null)
 		{
@@ -37,25 +47,29 @@ public class OverworldDialogManager : MonoBehaviour
 				CameraShaker.Presets.ShortShake3D();
 		} else 
 		if (coroutine != null)
-			NextDialog(d);
+			NextDialog();
 	}
 
-	public void NextDialog(List<Dialog> d)
+	public void NextDialog()
 	{
-		if (currentLine >= d.Count)
+		if (!Completed)
+			currentLine++;
+
+		Completed = false;
+		if (currentLine >= currentDialog.Count)
 		{
 			CloseDialog();
 			return;
 		}
 
-		box.GetComponent<SpriteRenderer>().sprite = DialogBoxSprite.b.GetBoxStyle("Default", d[currentLine].Type);
+		box.GetComponent<SpriteRenderer>().sprite = DialogBoxSprite.b.GetBoxStyle("Default", currentDialog[currentLine].Type);
 		StopCoroutine(coroutine);
 		txt.text ="";
 
-		if (d[currentLine].Type == dialogType.exclamatation)
+		if (currentDialog[currentLine].Type == dialogType.exclamatation)
 			CameraShaker.Presets.ShortShake2D();
 
-		StartCoroutine(TypeDialog(d[currentLine].Lines));
+		coroutine = StartCoroutine(TypeDialog(currentDialog[currentLine].Lines));
 	}
 
 	private void CloseDialog()
@@ -63,6 +77,8 @@ public class OverworldDialogManager : MonoBehaviour
 		coroutine = null;
 		box.SetActive(false);
 		onDialog = false;
+		FindObjectOfType<PlayerController>().canInteract = true;
+		CloseAction?.Invoke();
 	}
 
 	private IEnumerator TypeDialog(string str)
@@ -75,5 +91,7 @@ public class OverworldDialogManager : MonoBehaviour
 		}
 
 		currentLine++;
+		Completed = true;
 	}
+
 }									  

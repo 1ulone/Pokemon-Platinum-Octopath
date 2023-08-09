@@ -1,0 +1,883 @@
+fileFormatVersion: 2
+guid: 4dd945006fee7d4439e4943ab09b29ee
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccea6cc35c0f24428b2726bf7ad264f
+      internalID: 1316214293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 408
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fbc7e39a3eb884ea490e4d84d5f37e
+      internalID: 276168658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 408
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10822b2300571b4b8be275cb8d17814
+      internalID: -1453910635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 408
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d16c549ae820a141b0530d1c7ae697d
+      internalID: 2129808910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 408
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee556c4318f884488dd9254007c91e3
+      internalID: 768212179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee61a1f180f7424a8f3c936615daa92
+      internalID: 1420483621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 340
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96726bb83b48b9442b42a4eafdcdd5a7
+      internalID: 558714931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_7
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 340
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8c6ff7c00fecc459b0ad64546536a2
+      internalID: -2006430290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 340
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc57df7f35ef89344ae2b975113835c5
+      internalID: 809625785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 340
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8dc73f613006fc438fa0029e782c1f7
+      internalID: -1508871162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5405e29dae8764f45bf9da44b8858887
+      internalID: -1646446951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_11
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 272
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba4549ce4379cb40998e5fb564fd770
+      internalID: 512299483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_12
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 272
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ea35ec725feb940bc1cd99bef45489
+      internalID: 270531580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 272
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d980e52b3839647b17196caff084fa
+      internalID: -626397829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_14
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 272
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f923eaaf0ee0bd74882ecae0dae1aace
+      internalID: 1505609086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7a01916d4134049a97fa829072af5d
+      internalID: 1635127001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_16
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 204
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626a4569cb258e94e9b53946e1549d19
+      internalID: 514997306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_17
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 204
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62849e2b6944bcc4a9722023a4a5ec70
+      internalID: -1795336496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_18
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 204
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33247e7e024fa9346a9690ceb449d7fe
+      internalID: 331890370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_19
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 204
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a208d5d4f9330974cb3c9abae64374d6
+      internalID: -1949134961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93608009c856b3645a6c856e52d1c168
+      internalID: -886796523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 136
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bd379dad37d6c4d9a4525428752331
+      internalID: -122447101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_22
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 136
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4726314372630f468baa77347553678
+      internalID: 650980016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 136
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb56d22d591d44244a5e8ef38b334cc9
+      internalID: 1144990390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_24
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 136
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bea74dca228d8b40a31093cbaeb52c1
+      internalID: -1968950071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096a0c6d2cfc1ab4788943d255051987
+      internalID: 580211676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_26
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 68
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45049d293489602498c7a125fb3e3727
+      internalID: 808008853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_27
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 68
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5175ce89607c1f941aab171eb53fb971
+      internalID: 1260278105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_28
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 68
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1a4a34db2206b41acd7c629beb8cab
+      internalID: 812156192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_29
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 68
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4044116ba90abc94e8b5233e148b4729
+      internalID: -1003797447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df917eec3daa3747a5af94e71391aa2
+      internalID: 951096228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_31
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556ecd81dd57be44ea5d01fb18c81431
+      internalID: 189892619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_32
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d5a972bc8ac3040a26c2c7d816eca5
+      internalID: -1187277261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0464rhyperior-backrare_33
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 94
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88233d70127009741b1d9a2abd698810
+      internalID: -91752465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d991a293cafab6a4d9458a8e21e7bd1c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      0464rhyperior-backrare_0: 1316214293
+      0464rhyperior-backrare_1: 276168658
+      0464rhyperior-backrare_10: -1646446951
+      0464rhyperior-backrare_11: 512299483
+      0464rhyperior-backrare_12: 270531580
+      0464rhyperior-backrare_13: -626397829
+      0464rhyperior-backrare_14: 1505609086
+      0464rhyperior-backrare_15: 1635127001
+      0464rhyperior-backrare_16: 514997306
+      0464rhyperior-backrare_17: -1795336496
+      0464rhyperior-backrare_18: 331890370
+      0464rhyperior-backrare_19: -1949134961
+      0464rhyperior-backrare_2: -1453910635
+      0464rhyperior-backrare_20: -886796523
+      0464rhyperior-backrare_21: -122447101
+      0464rhyperior-backrare_22: 650980016
+      0464rhyperior-backrare_23: 1144990390
+      0464rhyperior-backrare_24: -1968950071
+      0464rhyperior-backrare_25: 580211676
+      0464rhyperior-backrare_26: 808008853
+      0464rhyperior-backrare_27: 1260278105
+      0464rhyperior-backrare_28: 812156192
+      0464rhyperior-backrare_29: -1003797447
+      0464rhyperior-backrare_3: 2129808910
+      0464rhyperior-backrare_30: 951096228
+      0464rhyperior-backrare_31: 189892619
+      0464rhyperior-backrare_32: -1187277261
+      0464rhyperior-backrare_33: -91752465
+      0464rhyperior-backrare_4: 768212179
+      0464rhyperior-backrare_5: 1420483621
+      0464rhyperior-backrare_6: 558714931
+      0464rhyperior-backrare_7: -2006430290
+      0464rhyperior-backrare_8: 809625785
+      0464rhyperior-backrare_9: -1508871162
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

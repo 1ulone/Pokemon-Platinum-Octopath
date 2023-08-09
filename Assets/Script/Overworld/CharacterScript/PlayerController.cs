@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] public LayerMask interactableLayer;
 	[SerializeField] public LayerMask colliderL;
 	[SerializeField] public LayerMask footable;
+	[SerializeField] public LayerMask trainerEye;
 
+	public bool canInteract { get; set; }
 	public Action onEncounter { get; set; }
 	public PokemonParty party { get; private set; }
 
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
 	private float defaultSpeed, sprintSpeed;
 	
-	private bool dontAnimate, onCheck, onWall;
+	private bool dontAnimate, onCheck, onWall, canMove;
 
 	private void Awake()
 		=> input = GetComponent<PlayerInput>();
@@ -55,20 +57,28 @@ public class PlayerController : MonoBehaviour
 		nextPoint.parent = null;
 		defaultSpeed = speed;
 		sprintSpeed = defaultSpeed*2;
+		canInteract = true;
+		canMove = true;
 	}
 	
 	private void Update()
 	{
 /////ONDIALOG
 		if (interact.WasPressedThisFrame())
-			Interact();
+		{
+			if (canInteract)
+				Interact(); 
+			else 
+				OverworldDialogManager.d.NextDialog();
+		}
 
-		if (OverworldDialogManager.onDialog)
+		if (OverworldDialogManager.onDialog || !canMove)
 			return;
 /////BASE
 		dir = move.ReadValue<Vector2>();
 		Move();
 		CollisionCheck();
+		CheckForTrainer();
 
 	//	Debug.Log($"{dir.normalized.x}, {dir.normalized.y}");
 	
@@ -118,16 +128,23 @@ public class PlayerController : MonoBehaviour
 
 	private void Interact()
 	{
+		if (!canInteract)
+			return;
+
+		anim.Play("idle");
+		canInteract = false;
+
 		var faceDir = new Vector3(anim.GetFloat("dirx"), 0, anim.GetFloat("diry"));
 		var interactPos = transform.localPosition + (faceDir*2);
 
+		Debug.Log("aha");
 		var collider = Physics.OverlapSphere(interactPos, 0.25f, interactableLayer);
 		if (collider != null)
 		{
+			Debug.Log("oho");
 			foreach(Collider g in collider)
-				g.GetComponent<NPCController>()?.Interact();
+				g.GetComponent<NPCController>()?.Interact(this.transform.position);
 		}
-		
 	}
 
 	private void CollisionCheck()
@@ -149,23 +166,38 @@ public class PlayerController : MonoBehaviour
 		{
 			if (UnityEngine.Random.Range(1, 101) <= 10)
 			{
-				GameSystemManager.i.SetOpponentPokemon(wa[UnityEngine.Random.Range(0, wa.Length)].GetComponent<MapArea>().GetRandomWildPokemon());
-				GameSystemManager.i.InitiateBattle();
+				PokemonParty pp = new PokemonParty();
+				pp.WildParty(wa[UnityEngine.Random.Range(0, wa.Length)].GetComponent<MapArea>().GetRandomWildPokemon());
+
+				GameSystemManager.i.SetOpponentPokemon(pp);
+				GameSystemManager.i.InitiateBattle(BattleAgainst.wild);
 			}
 		}
 	}
 
 	public void CheckForTrainer()
 	{
-	/*
-		Collider[] wa= Physics.OverlapSphere(transform.position, 0.5f, trainerLayer);
-		if (wa.Length > 0)
+		if (!canMove)
+			return;
+
+		Collider[] te= Physics.OverlapSphere(transform.position, 0.1f, trainerEye);
+		if (te.Length > 0)
 		{
-			if (UnityEngine.Random.Range(1, 101) <= 10)
+			foreach(Collider c in te)
 			{
+				c.GetComponent<TrainerTrigger>().Trigger(this.transform.position, ()=>
+				{
+					faceDirection = c.transform.position - transform.position;
+
+					anim.SetFloat("dirx", (int)faceDirection.x);
+					anim.SetFloat("diry", (int)faceDirection.z);
+				});
+
+				anim.Play("idle");
+				canInteract = false;
+				canMove = false;
 			}
 		}
-		*/
 	}
 
 	public void CreateFootstep()

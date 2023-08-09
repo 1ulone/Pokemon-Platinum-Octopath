@@ -15,4 +15,10 @@ public class PokemonParty : MonoBehaviour
 
 	public PokemonClass GetPokemon()
 	{ return party.Where(x => x.HP > 0).FirstOrDefault(); }
+
+	public void WildParty(PokemonClass pokemon)
+	{
+		party = new List<PokemonClass>();
+		party.Add(pokemon);
+	}
 }							
