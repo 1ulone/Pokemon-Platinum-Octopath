@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 	public Action onEncounter { get; set; }
 	public PokemonParty party { get; private set; }
 	public Vector3 facingDirection { get { return faceDirection; } }
+	public Vector2 inputDirection { get { return dir; } }
 
 	private Vector2 dir;
 	private Vector3 faceDirection;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
 	{
 		anim = GetComponentInChildren<Animator>();
 		party = GetComponent<PokemonParty>();
+
 		nextPoint.parent = null;
 		defaultSpeed = speed;
 		sprintSpeed = defaultSpeed*2;
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
 		}
 
 		if (!onWall)
-			transform.position = Vector3.MoveTowards(transform.position, nextPoint.position, speed* Time.deltaTime);	
+			transform.position = Vector3.MoveTowards(transform.position, nextPoint.position, speed* Time.deltaTime);
 
 		if (Vector3.Distance(transform.position, nextPoint.position) <= .05f)
 		{	

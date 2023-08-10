@@ -52,6 +52,7 @@ public class GameSystemManager : MonoBehaviour
 	private void Load()
 	{
 		BattleSystem.instances.StartBattle(playerParty, opponentParty);
+		FindObjectOfType<BattleTransition>().BattleOpeningTransition();
 	}
 
 	public void SetOpponentPokemon(PokemonParty p)

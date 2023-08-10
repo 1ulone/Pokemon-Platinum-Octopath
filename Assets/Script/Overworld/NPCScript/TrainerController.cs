@@ -6,6 +6,7 @@ using UnityEngine;
 public class TrainerController : MonoBehaviour
 {
 	[SerializeField] private GameObject exclamationMark;
+	[SerializeField] private Texture2D transitionTexture;
 	[SerializeField] private List<Dialog> dialog;
 	[SerializeField] private NPCController con;
 
@@ -24,9 +25,15 @@ public class TrainerController : MonoBehaviour
 		playerAction.Invoke();
 
 		yield return new WaitUntil(()=> con.isMoving == false);
-		OverworldDialogManager.d.ShowDialog(dialog, transform.position, ()=> {
-					GameSystemManager.i.SetOpponentPokemon(GetComponent<PokemonParty>());
-					GameSystemManager.i.InitiateBattle(BattleAgainst.trainer);
+		OverworldDialogManager.d.ShowDialog(dialog, transform.position, ()=> 
+				{
+					FindObjectOfType<BattleTransition>().StartTransition(transitionTexture, ()=> 
+							{
+								GameSystemManager.i.SetOpponentPokemon(GetComponent<PokemonParty>());
+								GameSystemManager.i.InitiateBattle(BattleAgainst.trainer);
+							});
 				});
 	}
+
+
 }								 

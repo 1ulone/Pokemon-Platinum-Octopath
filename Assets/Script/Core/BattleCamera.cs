@@ -84,7 +84,7 @@ public class BattleCamera : MonoBehaviour
 	private void SetCameraInfo(staticCameraInfo cInfo)
 	{
 		BattleCameraData data = cInfo.data;
-		LeanTween.move(this.gameObject, data.position, 1);
+		this.transform.position = data.position;
 		playerPokemon.position = data.playerPokemonPosition;
 		opponentPokemon.position = data.opponentPokemonPosition;
 
