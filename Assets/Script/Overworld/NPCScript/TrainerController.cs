@@ -24,14 +24,16 @@ public class TrainerController : MonoBehaviour
 		con.MoveTo(tPos);
 		playerAction.Invoke();
 
+
 		yield return new WaitUntil(()=> con.isMoving == false);
+		exclamationMark.SetActive(false);
 		OverworldDialogManager.d.ShowDialog(dialog, transform.position, ()=> 
 				{
-					FindObjectOfType<BattleTransition>().StartTransition(transitionTexture, ()=> 
+					StartCoroutine(FindObjectOfType<BattleTransition>().StartTransition(transitionTexture, ()=> 
 							{
 								GameSystemManager.i.SetOpponentPokemon(GetComponent<PokemonParty>());
 								GameSystemManager.i.InitiateBattle(BattleAgainst.trainer);
-							});
+							}));
 				});
 	}
 

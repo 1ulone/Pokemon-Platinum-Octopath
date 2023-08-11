@@ -20,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BlurTex:
+        m_Texture: {fileID: 2800000, guid: c4957e57c01e8ea4e92d20c42f28d895, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 3b60e05e2fe9606489390a6fc576c975, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -43,6 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _CutOff: 0
+    - _PixelStrength: 5
     - _cutOff: 0
     m_Colors: []
   m_BuildTextureStacks: []

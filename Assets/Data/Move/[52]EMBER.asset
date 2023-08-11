@@ -15,7 +15,7 @@ MonoBehaviour:
   mname: Ember
   Description: 
   type: 2
-  pp: 1
+  pp: 30
   accuracy: 100
   power: 40
   priority: 0

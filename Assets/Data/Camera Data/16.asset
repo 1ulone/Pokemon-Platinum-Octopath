@@ -15,5 +15,5 @@ MonoBehaviour:
   position: {x: 0, y: 6, z: -8.5}
   playerPokemonPosition: {x: -2.5, y: 0, z: -3.75}
   opponentPokemonPosition: {x: 6.25, y: 0, z: 2}
-  playerTrainerPosition: {x: -3.75, y: 0.5, z: -5.25}
+  playerTrainerPosition: {x: -3.5, y: 0.5, z: -5.25}
   opponentTrainerPosition: {x: 10.75, y: 1.1, z: 4.75}

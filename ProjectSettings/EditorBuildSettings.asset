@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: f5ebf4a30ee5bfd478eb310ba54c232d
   - enabled: 1
+    path: Assets/Scenes/Pool.unity
+    guid: 81280b0b245d38d4dbf64e0f144294b8
+  - enabled: 1
     path: Assets/Scenes/BattleCore.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Battle-GrassField.unity
+    guid: 91b7cb15e1a528f4787bf340f9560b59
   m_configObjects: {}

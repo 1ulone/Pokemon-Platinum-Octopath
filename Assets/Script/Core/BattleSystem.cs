@@ -77,6 +77,7 @@ public class BattleSystem : MonoBehaviour
 			{
 				opponentTrainer.SetActive(false);
 				BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, poppone.data.inGameSize);
+				yield return new WaitForSeconds(1f);
 
 				opponentUnit.Setup(poppone);
 				yield return dialog.TypeDialog($"a wild {opponentUnit.pname} appeared!");
@@ -88,9 +89,16 @@ public class BattleSystem : MonoBehaviour
 			{
 				opponentTrainer.SetActive(true);
 				BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, poppone.data.inGameSize);
-				yield return dialog.TypeDialog($"PKMN Trainer Dawn wants to battle!");
+				yield return new WaitForSeconds(1f);
 
+				yield return BattleCamera.cam.ChangeState(camState.onTrainerZoom);
+
+				opponentTrainer.GetComponent<Animator>().Play("intro");
+				yield return dialog.TypeDialog($"Gym Leader Candice wants to battle!");
+
+				yield return BattleCamera.cam.ChangeState(camState.onIdle);
 				opponentUnit.Setup(poppone);
+				menu.InitiateOpponentUI();
 				yield return dialog.TypeDialog($"Dawn sent out {opponentUnit.pname}!");
 				yield return new WaitForSeconds(1f);
 
@@ -99,6 +107,7 @@ public class BattleSystem : MonoBehaviour
 		
 		playerUnit.Setup(playerParty.GetPokemon());
 		moveOptions.Setup(playerUnit.pokemon.moves);
+		menu.InitiatePlayerUI();
 		yield return dialog.TypeDialog($"{playerUnit.pname} go!");
 		ACTIONstate();
 	}

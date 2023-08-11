@@ -5,7 +5,8 @@ using UnityEngine;
 public enum camState
 {
 	onIdle,
-	onAttack
+	onAttack,
+	onTrainerZoom
 //	onZoomPlayer,
 //	onZoomEnemy
 }
@@ -41,13 +42,15 @@ public class BattleCamera : MonoBehaviour
 	public IEnumerator ChangeState(camState state)
 	{
 		if (this.state == state)
-			yield return null;
+			yield break;
 
 		this.state = state;
 		switch(this.state)
 		{
 			case (camState.onIdle): { IdleCamera(); } break;
 			case (camState.onAttack): { AttackCamera(); } break;
+			case (camState.onTrainerZoom) : { TrainerZoom(); } break;
+
 //			case (camState.onZoomPlayer): { PlayerCamera(); } break;
 //			case (camState.onZoomEnemy): { EnemyCamera(); } break;
 		}
@@ -62,6 +65,14 @@ public class BattleCamera : MonoBehaviour
 	private void AttackCamera()
 	{
 		Vector3 npos = currentInfo.data.position + new Vector3(0, -1, 1);
+		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
+	}
+
+	private void TrainerZoom()
+	{
+		Vector3 tpos = currentInfo.data.opponentTrainerPosition;
+		Vector3 npos = new Vector3(tpos.x, tpos.y + 3, tpos.z - 5);
+		Debug.Log("a");
 		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
 	}
 
@@ -83,6 +94,7 @@ public class BattleCamera : MonoBehaviour
 
 	private void SetCameraInfo(staticCameraInfo cInfo)
 	{
+		state = camState.onIdle;
 		BattleCameraData data = cInfo.data;
 		this.transform.position = data.position;
 		playerPokemon.position = data.playerPokemonPosition;

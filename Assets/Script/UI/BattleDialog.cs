@@ -17,6 +17,7 @@ public class BattleDialog : MonoBehaviour
 	{ 
 		d = this;
 		expireTimer = 0f;
+		t.text = "";
 	}
 
 	public void SetDialog(string t)

@@ -52,6 +52,9 @@ public class OverworldDialogManager : MonoBehaviour
 
 	public void NextDialog()
 	{
+		if (!box.activeSelf)
+			return;
+
 		if (!Completed)
 			currentLine++;
 

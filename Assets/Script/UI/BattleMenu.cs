@@ -6,7 +6,8 @@ public class BattleMenu : MonoBehaviour
 	[SerializeField] private RectTransform menu;
 	[SerializeField] private RectTransform moveMenu;
 	[SerializeField] private RectTransform pkmnMenu;
-	[SerializeField] private RectTransform hp;
+	[SerializeField] private RectTransform php;
+	[SerializeField] private RectTransform ohp;
 
 	private bool onFight, onPkmn;
 	private MoveUI mui;
@@ -15,6 +16,9 @@ public class BattleMenu : MonoBehaviour
 	{
 		toggleMenu(false);
 		mui = GetComponent<MoveUI>();
+
+		LeanTween.move(php, new Vector3(300, 36, 0), 0);
+		LeanTween.move(ohp, new Vector3(-300, -40, 0), 0);
 	}
 
 	private void Update()
@@ -29,17 +33,23 @@ public class BattleMenu : MonoBehaviour
 		}
 	}
 
+	public void InitiatePlayerUI()
+		=> LeanTween.move(php, new Vector3(0, 36, 0), 0.5f).setEaseInCubic();
+
+	public void InitiateOpponentUI()
+		=> LeanTween.move(ohp, new Vector3(0, -40, 0), 0.5f).setEaseInCubic();
+
 	public void toggleMenu(bool b)
 	{
 		if (b)
 		{
 			LeanTween.move(menu, Vector3.zero, 0.5f).setEaseInCubic();
-			LeanTween.move(hp, new Vector3(0, 112, 0), 0.5f).setEaseInCubic();
+			LeanTween.move(php, new Vector3(0, 112, 0), 0.5f).setEaseInCubic();
 		}
 		else 
 		{
 			LeanTween.move(menu, new Vector3(0, -100, 0), 0.5f).setEaseInCubic();
-			LeanTween.move(hp, new Vector3(0, 36, 0), 0.5f).setEaseInCubic();
+			LeanTween.move(php, new Vector3(0, 36, 0), 0.5f).setEaseInCubic();
 		}
 	}
 

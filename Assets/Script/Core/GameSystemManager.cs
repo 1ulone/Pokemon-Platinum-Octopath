@@ -45,7 +45,8 @@ public class GameSystemManager : MonoBehaviour
 	private void ChangeStateToOverworld()
 	{
 		foreach(GameObject o in allObject)
-			o.SetActive(true);
+			if (o != null)
+				o.SetActive(true);
 	}
 
 
@@ -62,6 +63,7 @@ public class GameSystemManager : MonoBehaviour
 	{
 		playerParty = playerOverworld.party;
 
+		SceneManager.LoadScene("Battle-GrassField", LoadSceneMode.Additive);
 		SceneManager.LoadScene("BattleCore", LoadSceneMode.Additive);
 		ChangeStateToBattle();
 
@@ -72,6 +74,7 @@ public class GameSystemManager : MonoBehaviour
 	public void ExitBattle(bool win)
 	{
 		SceneManager.UnloadSceneAsync("BattleCore");
+		SceneManager.UnloadSceneAsync("Battle-GrassField");
 		ChangeStateToOverworld();
 	}
 }								 
