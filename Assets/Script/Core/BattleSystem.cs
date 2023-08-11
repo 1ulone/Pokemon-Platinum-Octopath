@@ -249,7 +249,7 @@ public class BattleSystem : MonoBehaviour
 			}
 			else
 			{
-				yield return BattleCamera.cam.ChangeState(source.isPlayer?camState.onZoomEnemy:camState.onZoomPlayer);
+//				yield return BattleCamera.cam.ChangeState(source.isPlayer?camState.onZoomEnemy:camState.onZoomPlayer);
 				DamageDetails details = target.pokemon.TakeDamage(move, source.pokemon);
 				target.HUD.UpdateHP();
 				StartCoroutine(target.hitEffect());
@@ -291,12 +291,12 @@ public class BattleSystem : MonoBehaviour
 			if (mt == MoveTarget.Self)
 			{
 				source.ApplyBoosts(effects.boosts); 
-				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomPlayer:camState.onZoomEnemy);
+//				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomPlayer:camState.onZoomEnemy);
 			} else
 			if (mt == MoveTarget.Foe)
 			{
 				target.ApplyBoosts(effects.boosts);
-				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomEnemy:camState.onZoomPlayer);
+//				yield return BattleCamera.cam.ChangeState(isP?camState.onZoomEnemy:camState.onZoomPlayer);
 			}
 		}
 

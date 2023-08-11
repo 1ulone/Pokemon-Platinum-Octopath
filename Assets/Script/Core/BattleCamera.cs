@@ -5,9 +5,9 @@ using UnityEngine;
 public enum camState
 {
 	onIdle,
-	onAttack,
-	onZoomPlayer,
-	onZoomEnemy
+	onAttack
+//	onZoomPlayer,
+//	onZoomEnemy
 }
 
 public class BattleCamera : MonoBehaviour
@@ -48,8 +48,8 @@ public class BattleCamera : MonoBehaviour
 		{
 			case (camState.onIdle): { IdleCamera(); } break;
 			case (camState.onAttack): { AttackCamera(); } break;
-			case (camState.onZoomPlayer): { PlayerCamera(); } break;
-			case (camState.onZoomEnemy): { EnemyCamera(); } break;
+//			case (camState.onZoomPlayer): { PlayerCamera(); } break;
+//			case (camState.onZoomEnemy): { EnemyCamera(); } break;
 		}
 
 		yield return new WaitForSeconds(0.5f);
@@ -65,6 +65,7 @@ public class BattleCamera : MonoBehaviour
 		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
 	}
 
+	/*
 	private void PlayerCamera()
 	{
 		float pHeight = playerPokemon.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
@@ -78,11 +79,12 @@ public class BattleCamera : MonoBehaviour
 		Vector3 npos = currentInfo.data.opponentPokemonPosition + new Vector3(0, pHeight+currentInfo.opponentMod, currentInfo.data.position.z/2f);
 		LeanTween.move(this.gameObject, npos, 0.5f).setEaseInCubic();
 	}
+	*/
 
 	private void SetCameraInfo(staticCameraInfo cInfo)
 	{
 		BattleCameraData data = cInfo.data;
-		this.transform.position = data.position;
+		LeanTween.move(this.gameObject, data.position, 1);
 		playerPokemon.position = data.playerPokemonPosition;
 		opponentPokemon.position = data.opponentPokemonPosition;
 

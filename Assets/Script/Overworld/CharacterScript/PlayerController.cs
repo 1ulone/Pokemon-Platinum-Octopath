@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	public bool canInteract { get; set; }
 	public Action onEncounter { get; set; }
 	public PokemonParty party { get; private set; }
+	public Vector3 facingDirection { get { return faceDirection; } }
 
 	private Vector2 dir;
 	private Vector3 faceDirection;
