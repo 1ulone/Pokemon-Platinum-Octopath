@@ -27,6 +27,8 @@ public class TrainerController : MonoBehaviour
 
 	public IEnumerator TriggerTrainerBattle(Vector3 tPos, Action playerAction = null)
 	{
+		GameSystemManager.TransitionToBattle = true;
+
 		exclamationMark.SetActive(true);
 		yield return new WaitForSeconds(1f);
 

@@ -12,6 +12,7 @@ public enum BattleAgainst
 public class GameSystemManager : MonoBehaviour
 {
 	public static GameSystemManager i;
+	public static bool TransitionToBattle;
 
 	[SerializeField] private List<GameObject> importantObject;
 	[SerializeField] private PlayerController playerOverworld;
@@ -31,6 +32,7 @@ public class GameSystemManager : MonoBehaviour
 
 	private void ChangeStateToBattle()
 	{
+		importantObject.Add(FindObjectOfType<Pool>().gameObject);
 		if (allObject == null)
 		{
 			GameObject[] allObj = FindObjectsOfType<GameObject>();
@@ -90,6 +92,7 @@ public class GameSystemManager : MonoBehaviour
 		opponentDatas.Clear();
 		SceneManager.UnloadSceneAsync("BattleCore");
 		SceneManager.UnloadSceneAsync("Battle-GrassField");
+		TransitionToBattle = false;
 		ChangeStateToOverworld();
 	}
 }								 

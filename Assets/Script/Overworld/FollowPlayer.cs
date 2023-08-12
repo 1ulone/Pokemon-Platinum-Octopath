@@ -22,9 +22,12 @@ public class FollowPlayer : MonoBehaviour
 		doFollow = permanentFollow;
 	}
 
+	private void OnEnable()
+		=> doFollow = permanentFollow;
+
 	private void Update()
 	{
-		if (!doFollow || !player.canInteract)
+		if (!doFollow || !player.canInteract || GameSystemManager.TransitionToBattle)
 			return;
 		
 		if (player.inputDirection != Vector2.zero)
@@ -52,9 +55,8 @@ public class FollowPlayer : MonoBehaviour
 					record.Remove(record[0]);
 					LeanTween.move(this.gameObject, npos, 0.1f);
 				}
-
 			}
-			
+
 //				this.transform.position = Vector3.MoveTowards(transform.position, npos, player.speed);
 			/*
 			var maxDist = player.speed * Time.deltaTime;

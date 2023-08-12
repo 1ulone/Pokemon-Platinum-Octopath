@@ -73,6 +73,12 @@ public class BattleSystem : MonoBehaviour
 		trainerList = new List<opponentData>();
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.K))
+			StartCoroutine(ThrowPokeball());
+	}
+
 	public void SetTrainerData(opponentData od)
 	{
 		trainerList.Add(od);
@@ -476,4 +482,22 @@ public class BattleSystem : MonoBehaviour
 			yield return dialog.TypeDialog("It's not very effective");
 	}
 
+	private IEnumerator ThrowPokeball()
+	{
+		state = state.busy;
+		yield return dialog.TypeDialog("You used Pokeball!");
+
+		bool donAnim = false;
+		GameObject pokeball = Pool.i.CreateObject("Pokeball", playerUnit.transform.position, Vector3.zero);
+		Vector3 midPoint = new Vector3(0, 5, Mathf.Abs(opponentUnit.transform.position.z) - Mathf.Abs(playerUnit.transform.position.z));
+
+		LeanTween.move(pokeball, midPoint, 0.5f).setOnComplete(()=>
+			{
+				LeanTween.move(pokeball, opponentUnit.transform.position + new Vector3(0, opponentUnit.pokemon.data.baseSprite.bounds.size.y/2, 0), 0.5f).setOnComplete(()=> donAnim = true);
+			});
+
+		yield return new WaitUntil(()=> donAnim == true);
+		Debug.Log("aha");
+
+	}
 }							

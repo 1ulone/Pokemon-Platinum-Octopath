@@ -27821,6 +27821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteFlash: {fileID: 225055268}
+  inBattle: 0
 --- !u!1 &1014659690
 GameObject:
   m_ObjectHideFlags: 0

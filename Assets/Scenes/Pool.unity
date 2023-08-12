@@ -157,6 +157,9 @@ MonoBehaviour:
   - tag: snowstep
     obj: {fileID: 174617851100906665, guid: 763de336d16ba72429ebf7f87fb66d92, type: 3}
     count: 100
+  - tag: pokeball
+    obj: {fileID: 1869768748866015110, guid: f88ce39233b441247b3095e316f69723, type: 3}
+    count: 10
 --- !u!4 &1391087869
 Transform:
   m_ObjectHideFlags: 0
