@@ -1,10 +1,12 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum state
 {
 	action,
 	onturn,
+	choice,
 	busy,
 	exit
 }
@@ -15,6 +17,12 @@ public enum BattleAction
 	switchP,
 	useItem,
 	run
+}
+
+public class opponentData
+{
+	public string tname;
+	public RuntimeAnimatorController anim;
 }
 
 public class BattleSystem : MonoBehaviour
@@ -28,6 +36,7 @@ public class BattleSystem : MonoBehaviour
 
 	[Header("UI Component")]
 	[SerializeField] BattleDialog dialog;
+	[SerializeField] ConfirmButton choice;
 
 	[Header("Player UI Component")]
 	[SerializeField] BattleMenu menu;
@@ -40,8 +49,15 @@ public class BattleSystem : MonoBehaviour
 	public PokemonParty PlayerParty { get { return playerParty; } }
 	public PokemonClass PlayerCurrentPokemon { get { return playerUnit.pokemon; } }
 
+	public state State { get { return state; } }
+	public state? PreviousState { get { return prevState; } }
+
 	private state state;
 	private state? prevState;
+
+	private List<opponentData> trainerList;
+	private opponentData trainer;
+
 	private MoveClass playerMove;
 	private MoveClass opponentMove;
 
@@ -54,6 +70,15 @@ public class BattleSystem : MonoBehaviour
 	private void Awake()
 	{
 		instances = this;
+		trainerList = new List<opponentData>();
+	}
+
+	public void SetTrainerData(opponentData od)
+	{
+		trainerList.Add(od);
+
+		if (trainerList.Count == 1)
+			trainer = trainerList[0];
 	}
 
 	public void StartBattle(PokemonParty pparty, PokemonParty oppoP)
@@ -88,18 +113,19 @@ public class BattleSystem : MonoBehaviour
 			case BattleAgainst.trainer:////TRAINER BATTLE
 			{
 				opponentTrainer.SetActive(true);
+				opponentTrainer.GetComponent<Animator>().runtimeAnimatorController = trainer.anim;
 				BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, poppone.data.inGameSize);
 				yield return new WaitForSeconds(1f);
 
 				yield return BattleCamera.cam.ChangeState(camState.onTrainerZoom);
 
 				opponentTrainer.GetComponent<Animator>().Play("intro");
-				yield return dialog.TypeDialog($"Gym Leader Candice wants to battle!");
+				yield return dialog.TypeDialog($"{trainer.tname} wants to battle!");
 
 				yield return BattleCamera.cam.ChangeState(camState.onIdle);
 				opponentUnit.Setup(poppone);
 				menu.InitiateOpponentUI();
-				yield return dialog.TypeDialog($"Dawn sent out {opponentUnit.pname}!");
+				yield return dialog.TypeDialog($"{trainer.tname} sent out {opponentUnit.pname}!");
 				yield return new WaitForSeconds(1f);
 
 			} break;
@@ -143,6 +169,18 @@ public class BattleSystem : MonoBehaviour
 			StartCoroutine(SwitchPokemon(p));
 		}
 	}
+	
+	public IEnumerator QUESTIONTOSWITCHstate(PokemonClass p)
+	{
+		state = state.busy;
+		yield return dialog.TypeDialog($"{trainer.tname} is about to change to {p.data.pname}. Do you want to change pokemon?");
+
+		state = state.choice;
+		choice.confirmAction += ()=> { prevState = state.choice; choice.ExitButton(); menu.onPOKEMON(); };
+		choice.cancelAction += ()=> { StartCoroutine(SendTrainerNextPokemon()); };
+
+		choice.ShowButton();
+	}
 
 	private void EXITstate(bool w)
 	{
@@ -153,7 +191,7 @@ public class BattleSystem : MonoBehaviour
 
 	public IEnumerator SwitchPokemon(PokemonClass newPokemon)
 	{
-		yield return BattleCamera.cam.ChangeState(camState.onAttack);
+		yield return BattleCamera.cam.ChangeState(camState.onIdle);
 
 		if (playerUnit.pokemon.HP > 0)
 		{
@@ -166,10 +204,27 @@ public class BattleSystem : MonoBehaviour
 		moveOptions.Setup(newPokemon.moves);
 		BattleCamera.cam.SetBattleCamera(playerUnit.pokemon.data.inGameSize, opponentUnit.pokemon.data.inGameSize);
 		yield return dialog.TypeDialog($"Go {playerUnit.pname}!");
- 
-		state = state.onturn;
+
+		if (prevState == null)
+			state = state.onturn; else 
+		if (prevState == state.choice)
+			StartCoroutine(SendTrainerNextPokemon());
 	}
 
+	public IEnumerator SendTrainerNextPokemon()
+	{
+		if (prevState == state.choice)
+			prevState = null;
+
+		state = state.busy;
+		yield return new WaitForSeconds(1f);
+
+		var np = opponentParty.GetPokemon();
+		opponentUnit.Setup(np);
+		yield return dialog.TypeDialog($"{trainer.tname} send out {opponentUnit.pname}");
+
+		state = state.onturn; 
+	}
 
 	private IEnumerator ExecuteTurn(BattleAction playerAction)
 	{
@@ -335,7 +390,20 @@ public class BattleSystem : MonoBehaviour
 				EXITstate(false);
 		} 
 		else 
-			EXITstate(true);
+		{
+			switch(against)
+			{
+				case BattleAgainst.wild: { EXITstate(true); } break;
+				case BattleAgainst.trainer:
+				{
+					var nextPokemon = opponentParty.GetPokemon();
+					if (nextPokemon != null)
+						StartCoroutine(QUESTIONTOSWITCHstate(nextPokemon));
+					else 
+						EXITstate(true);
+				} break;
+			}
+		}
 	}
 
 	private IEnumerator ExecuteOnEnd(BattleUnit source)
@@ -357,6 +425,7 @@ public class BattleSystem : MonoBehaviour
 			yield return new WaitForSeconds(1f);
 
 			CheckBattleEnd(source);
+			yield return new WaitUntil(() => state == state.onturn);
 		}
 
 		yield return BattleCamera.cam.ChangeState(camState.onAttack);
@@ -406,4 +475,5 @@ public class BattleSystem : MonoBehaviour
 		if (details.typeEffectiveness < 1f)
 			yield return dialog.TypeDialog("It's not very effective");
 	}
+
 }							

@@ -5,10 +5,19 @@ using UnityEngine;
 public class BattleTransition : MonoBehaviour
 {
 	[SerializeField] private CanvasGroup whiteFlash; 
+	[SerializeField] private bool inBattle = false;
 	private SpriteRenderer sRenderer;
 
 	private void Awake()
 		=> sRenderer = GetComponent<SpriteRenderer>();
+
+	private void OnEnable()
+	{ 
+		if (!inBattle)
+			sRenderer.material.SetFloat("_CutOff", 0); else 
+		if (inBattle)
+			sRenderer.material.SetFloat("_CutOff", 1);  
+	}
 
 	public IEnumerator StartTransition(Texture2D transitionTex, Action onEndTransition)
 	{

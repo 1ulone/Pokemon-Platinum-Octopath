@@ -58,6 +58,7 @@ public class PartyUI : MonoBehaviour
 		transform.localPosition = new Vector3(0, 800, 0);
 		selectedPokemon = null;
 
+
 		cbut.confirmAction = null;
 		cbut.cancelAction = null;
 		cbut.ExitButton();
@@ -117,6 +118,9 @@ public class PartyUI : MonoBehaviour
 
 	public void OnCancel()
 	{
+		if (BattleSystem.instances.PreviousState == state.choice)
+			StartCoroutine(BattleSystem.instances.SendTrainerNextPokemon());
+
 		selectedPokemon = null;
 	}
 }

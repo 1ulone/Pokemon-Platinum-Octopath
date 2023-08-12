@@ -20,11 +20,13 @@ public class GameSystemManager : MonoBehaviour
 	private PokemonParty playerParty;
 
 	private List<GameObject> allObject;
+	private List<opponentData> opponentDatas;
 
 	private void Awake()
 	{ 
 		i = this;
 		ConditionDatabase.Init();
+		opponentDatas = new List<opponentData>();
 	}
 
 	private void ChangeStateToBattle()
@@ -49,15 +51,27 @@ public class GameSystemManager : MonoBehaviour
 				o.SetActive(true);
 	}
 
-
 	private void Load()
 	{
+		foreach(opponentData d in opponentDatas)
+			BattleSystem.instances.SetTrainerData(d);
 		BattleSystem.instances.StartBattle(playerParty, opponentParty);
 		FindObjectOfType<BattleTransition>().BattleOpeningTransition();
 	}
 
 	public void SetOpponentPokemon(PokemonParty p)
 		=> opponentParty = p;
+
+	public void SetOpponentData(string tag, RuntimeAnimatorController animator)
+	{
+		opponentData od = new opponentData()
+		{
+			tname = tag,
+			anim = animator
+		};
+
+		opponentDatas.Add(od);
+	}
 
 	public void InitiateBattle(BattleAgainst ba)
 	{
@@ -73,6 +87,7 @@ public class GameSystemManager : MonoBehaviour
 	
 	public void ExitBattle(bool win)
 	{
+		opponentDatas.Clear();
 		SceneManager.UnloadSceneAsync("BattleCore");
 		SceneManager.UnloadSceneAsync("Battle-GrassField");
 		ChangeStateToOverworld();

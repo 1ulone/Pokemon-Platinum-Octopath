@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
 				OverworldDialogManager.d.NextDialog();
 		}
 
-		if (OverworldDialogManager.onDialog || !canMove)
+		if (OverworldDialogManager.onDialog || !canMove || !canInteract)
 			return;
 /////BASE
 		dir = move.ReadValue<Vector2>();
@@ -140,14 +140,10 @@ public class PlayerController : MonoBehaviour
 		var faceDir = new Vector3(anim.GetFloat("dirx"), 0, anim.GetFloat("diry"));
 		var interactPos = transform.localPosition + (faceDir*2);
 
-		Debug.Log("aha");
 		var collider = Physics.OverlapSphere(interactPos, 0.25f, interactableLayer);
 		if (collider != null)
-		{
-			Debug.Log("oho");
 			foreach(Collider g in collider)
 				g.GetComponent<NPCController>()?.Interact(this.transform.position);
-		}
 	}
 
 	private void CollisionCheck()

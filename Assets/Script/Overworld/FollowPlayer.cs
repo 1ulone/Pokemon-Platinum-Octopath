@@ -24,7 +24,7 @@ public class FollowPlayer : MonoBehaviour
 
 	private void Update()
 	{
-		if (!doFollow)
+		if (!doFollow || !player.canInteract)
 			return;
 		
 		if (player.inputDirection != Vector2.zero)

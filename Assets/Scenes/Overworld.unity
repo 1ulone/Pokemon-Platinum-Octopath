@@ -36971,7 +36971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   permanentFollow: 1
-  permanentAnimate: 0
+  permanentAnimate: 1
   steps: 25
   targetDist: 0.5
 --- !u!4 &1210332660
@@ -47643,6 +47643,8 @@ MonoBehaviour:
   party:
   - Data: {fileID: 11400000, guid: 1d3c9264d9ecef04aafc2ef31a938c9e, type: 2}
     Level: 32
+  - Data: {fileID: 11400000, guid: 2373fc39e5e6e4b4e8f2265d3c618502, type: 2}
+    Level: 32
 --- !u!4 &1673873201
 Transform:
   m_ObjectHideFlags: 0
@@ -47704,6 +47706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75dc713d197a6f44ac0ece069e8cc59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trainerName: Candice
+  trainerClass: Gym Leader
+  animator: {fileID: 9100000, guid: 3c7212e59a10a1c42bf9a1ff1f92ff06, type: 2}
   exclamationMark: {fileID: 1498690004}
   transitionTexture: {fileID: 2800000, guid: ba6a1098712f522418697e7a4893fb62, type: 3}
   dialog:

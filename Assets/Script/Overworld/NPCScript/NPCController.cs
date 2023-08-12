@@ -12,6 +12,7 @@ public class NPCController : MonoBehaviour, Interactable
 	[SerializeField] private LayerMask colliderL;
 
 	public bool canMove { get; set; }
+	public bool battleReady  { get; set; }
 	public bool isMoving { get { return onMove; } }
 
 	private bool onWall;
@@ -28,20 +29,29 @@ public class NPCController : MonoBehaviour, Interactable
 	public void Interact(Vector3 otherPos)
 	{
 		onDialog = true;
-		OverworldDialogManager.d.ShowDialog(dialog, transform.position, ()=> { onDialog = false; });
 		faceDirection = (otherPos - transform.position).normalized;
 		anim.SetFloat("moveX", faceDirection.x);
 		anim.SetFloat("moveY", faceDirection.z);
+
+		if (battleReady)
+			StartCoroutine(GetComponent<TrainerController>().TriggerTrainerBattle(this.transform.position)); else 
+		if (!battleReady)
+			OverworldDialogManager.d.ShowDialog(dialog, transform.position, ()=> { onDialog = false; });	
 	}
 
 	private void Start()
 	{
 		anim = GetComponentInChildren<Animator>();
-		coroutine = null;
 		onMove = false;
 		canMove = true;
 		timer = wanderCooldown;
 		currentPattern = 0;
+	}
+
+	private void OnEnable()
+	{
+		onDialog = false;
+		coroutine = null;
 	}
 
 	public void MoveTo(Vector3 pos)
