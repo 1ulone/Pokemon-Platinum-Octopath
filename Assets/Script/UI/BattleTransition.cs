@@ -42,6 +42,6 @@ public class BattleTransition : MonoBehaviour
 	public void BattleOpeningTransition()
 	{
 		LeanTween.reset();
-		LeanTween.value(1, 0, 2.5f).setOnUpdate((float x)=> sRenderer.material.SetFloat("_CutOff", x));
+		LeanTween.value(1, 0, 2.5f).setOnUpdate((float x)=> sRenderer.material.SetFloat("_CutOff", x)).setDelay(1f);
 	}
 }								

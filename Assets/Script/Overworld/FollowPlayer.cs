@@ -25,7 +25,7 @@ public class FollowPlayer : MonoBehaviour
 	private void OnEnable()
 		=> doFollow = permanentFollow;
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (!doFollow || !player.canInteract || GameSystemManager.TransitionToBattle)
 			return;

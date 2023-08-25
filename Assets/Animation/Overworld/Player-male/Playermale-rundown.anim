@@ -85,8 +85,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.1
+    functionName: doEvents
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.25
     functionName: FootstepMark
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.26666668
+    functionName: doEvents
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

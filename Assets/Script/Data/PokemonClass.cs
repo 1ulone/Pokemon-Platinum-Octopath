@@ -22,6 +22,7 @@ public class PokemonClass
 	public int volatileStatusTime { get; set; }
 	public int level { get { return Level; } }
 	public int HP { get; set; }
+	public int exp { get; set; }
 
 	public bool HpChanged { get; set; }
 
@@ -41,6 +42,8 @@ public class PokemonClass
 
 		CalculateStats();
 		HP = maxHp;
+		exp = data.GetEXPforLevel(level);
+		Debug.Log(exp);
 
 		ResetStatBoost();
 		status = null;
@@ -220,6 +223,17 @@ public class PokemonClass
 	{
 		volatileStatus = null;
 		ResetStatBoost();
+	}
+
+	public bool CheckForLevelup()
+	{
+		Debug.Log($"{exp}/{data.GetEXPforLevel(Level+1)}");
+		if (exp > data.GetEXPforLevel(Level + 1))
+		{
+			++Level;
+			return true;
+		}
+		return false;
 	}
 }
 

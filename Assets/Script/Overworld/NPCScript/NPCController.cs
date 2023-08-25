@@ -6,7 +6,6 @@ public class NPCController : MonoBehaviour, Interactable
 {
 	[SerializeField] private float speed = 10;
 	[SerializeField] private float wanderCooldown = 5;
-	[SerializeField] private int wanderRange = 5;
 	[SerializeField] private List<Dialog> dialog;
 	[SerializeField] private List<Vector3> movePattern;
 	[SerializeField] private LayerMask colliderL;

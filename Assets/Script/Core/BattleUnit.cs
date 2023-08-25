@@ -11,6 +11,7 @@ public class BattleUnit : MonoBehaviour
 	[SerializeField] private bool isPlayerPokemon;
 	[SerializeField] private BattleHUDController hud;
 	[SerializeField] private VisualEffect vfx;
+	[SerializeField] private Transform CenterPos;
 
 	public bool isPlayer { get { return isPlayerPokemon; } }
 	public string pname { get; private set; }
@@ -36,7 +37,7 @@ public class BattleUnit : MonoBehaviour
 			CameraShaker.Shake(new BounceShake(shakeParams));
 	}
 
-	public void Setup(PokemonClass p)
+	public void Setup(PokemonClass p, bool isWild = false)
 	{
 		this.pokemon = p;
 		anim.runtimeAnimatorController = pokemon.data.animator;
@@ -48,8 +49,11 @@ public class BattleUnit : MonoBehaviour
 			anim.Play("front");
 
 		hud.SetData(pokemon);
+		StartCoroutine(hud.SetEXP(false));
 		shakeParams.freq = pokemon.data.weight; 
 		shakeParams.numBounces = (int)shakeParams.freq/2;
+	///GET CENTER BOUND CORRECTLY
+		CenterPos.position = new Vector3(transform.position.x, pokemon.data.baseSprite.bounds.size.y/2, transform.position.z);
 
 		//Check for Emmision
 		if (pokemon.data.emmitsLight)
@@ -67,7 +71,8 @@ public class BattleUnit : MonoBehaviour
 			emmision.enabled = false; 
 		}
 
-		StartCoroutine(EnterAnimation());
+		if (!isWild)
+			StartCoroutine(EnterAnimation());
 	}
 
 	public IEnumerator EnterAnimation()

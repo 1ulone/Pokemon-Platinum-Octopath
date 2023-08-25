@@ -36,6 +36,12 @@ public class PlayerController : MonoBehaviour
 
 	private void OnEnable()
 	{
+		nextPoint.parent = null;
+		defaultSpeed = speed;
+		sprintSpeed = defaultSpeed*2;
+		canInteract = true;
+		canMove = true;
+
 		move = input.actions["WASD"];
 		sprint = input.actions["Sprint"];
 		interact = input.actions["Interact"];
@@ -165,7 +171,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (UnityEngine.Random.Range(1, 101) <= 10)
 			{
-				PokemonParty pp = new PokemonParty();
+				PokemonParty pp = FindObjectOfType<GameSystemManager>().GetComponent<PokemonParty>();
 				pp.WildParty(wa[UnityEngine.Random.Range(0, wa.Length)].GetComponent<MapArea>().GetRandomWildPokemon());
 
 				GameSystemManager.i.SetOpponentPokemon(pp);

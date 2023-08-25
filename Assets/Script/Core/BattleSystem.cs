@@ -66,6 +66,7 @@ public class BattleSystem : MonoBehaviour
 //	private PokemonClass opponentPokemon;
 
 	private PokemonClass selectedPokemon;
+	private int escapeAttempts;
 
 	private void Awake()
 	{
@@ -91,6 +92,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		this.playerParty = pparty;
 		this.opponentParty = oppoP;
+		escapeAttempts = 0;
 
 		partyMemberUI.InitializeUI();
 
@@ -110,9 +112,11 @@ public class BattleSystem : MonoBehaviour
 				BattleCamera.cam.SetBattleCamera(pplayer.data.inGameSize, poppone.data.inGameSize);
 				yield return new WaitForSeconds(1f);
 
-				opponentUnit.Setup(poppone);
+				opponentUnit.Setup(poppone, true);
 				yield return dialog.TypeDialog($"a wild {opponentUnit.pname} appeared!");
 				yield return new WaitForSeconds(1f);
+
+				menu.InitiateOpponentUI();
 
 			} break;
 
@@ -131,6 +135,7 @@ public class BattleSystem : MonoBehaviour
 				yield return BattleCamera.cam.ChangeState(camState.onIdle);
 				opponentUnit.Setup(poppone);
 				menu.InitiateOpponentUI();
+
 				yield return dialog.TypeDialog($"{trainer.tname} sent out {opponentUnit.pname}!");
 				yield return new WaitForSeconds(1f);
 
@@ -140,6 +145,7 @@ public class BattleSystem : MonoBehaviour
 		playerUnit.Setup(playerParty.GetPokemon());
 		moveOptions.Setup(playerUnit.pokemon.moves);
 		menu.InitiatePlayerUI();
+
 		yield return dialog.TypeDialog($"{playerUnit.pname} go!");
 		ACTIONstate();
 	}
@@ -187,6 +193,9 @@ public class BattleSystem : MonoBehaviour
 
 		choice.ShowButton();
 	}
+
+	public void RUNstate()
+		=> StartCoroutine(ExecuteTurn(BattleAction.run));
 
 	private void EXITstate(bool w)
 	{
@@ -282,6 +291,10 @@ public class BattleSystem : MonoBehaviour
 				state = state.busy;
 				var np = selectedPokemon;
 				yield return SwitchPokemon(np);
+			} else
+			if (playerAction == BattleAction.run)
+			{
+				yield return TryToEscape();
 			}
 
 			opponentUnit.pokemon.currentMove = opponentUnit.pokemon.GetRandomMove();
@@ -337,13 +350,8 @@ public class BattleSystem : MonoBehaviour
 			}
 
 			if (target.pokemon.HP <= 0)
-			{ 
-				yield return dialog.TypeDialog($"{target.pname} Fainted"); 
-				target.FaintAnimation();
-				yield return BattleCamera.cam.ChangeState(camState.onAttack);
-				yield return new WaitForSeconds(1f);
-	
-				CheckBattleEnd(target);
+			{
+				yield return PokemonFainted(target);
 			}
 
 		}
@@ -383,6 +391,38 @@ public class BattleSystem : MonoBehaviour
 		yield return StatusChangeDetails(source);
 		yield return StatusChangeDetails(target);
 
+	}
+
+	private IEnumerator PokemonFainted(BattleUnit faintedP)
+	{
+		yield return dialog.TypeDialog($"{faintedP.pname} Fainted"); 
+		faintedP.FaintAnimation();
+		yield return BattleCamera.cam.ChangeState(camState.onIdle);
+		yield return new WaitForSeconds(1f);
+
+		if (!faintedP.isPlayer)
+		{
+			int exp = faintedP.pokemon.data.expYield;
+			int lvl = faintedP.pokemon.level;
+			float trainerBonus = against==BattleAgainst.trainer?1.5f:1f;
+			int expGain = Mathf.FloorToInt((exp* lvl* trainerBonus) / 7);
+
+			playerUnit.pokemon.exp += expGain;
+			Debug.Log(expGain);
+			yield return playerUnit.HUD.SetEXP(true);
+			yield return new WaitForSeconds(1f);
+
+			while (playerUnit.pokemon.CheckForLevelup())
+			{
+				playerUnit.HUD.SetLevel();
+				yield return playerUnit.HUD.SetEXP(false);
+
+				yield return dialog.TypeDialog($"{playerUnit.pname} grew to Level {playerUnit.pokemon.level}!");
+				yield return playerUnit.HUD.SetEXP(true);
+			}
+		}
+	
+		CheckBattleEnd(faintedP);
 	}
 
 	private void CheckBattleEnd(BattleUnit faintedP)
@@ -425,12 +465,7 @@ public class BattleSystem : MonoBehaviour
 
 		if (source.pokemon.HP <= 0)
 		{ 
-			yield return dialog.TypeDialog($"{source.pname} Fainted"); 
-			source.FaintAnimation();
-			yield return BattleCamera.cam.ChangeState(camState.onAttack);
-			yield return new WaitForSeconds(1f);
-
-			CheckBattleEnd(source);
+			yield return PokemonFainted(source);
 			yield return new WaitUntil(() => state == state.onturn);
 		}
 
@@ -485,19 +520,126 @@ public class BattleSystem : MonoBehaviour
 	private IEnumerator ThrowPokeball()
 	{
 		state = state.busy;
+		if (against != BattleAgainst.wild)
+		{
+			yield return dialog.TypeDialog("You can't steal a trainer Pokemon!");
+			state = state.onturn;
+			yield break;
+		}
+
 		yield return dialog.TypeDialog("You used Pokeball!");
 
-		bool donAnim = false;
-		GameObject pokeball = Pool.i.CreateObject("Pokeball", playerUnit.transform.position, Vector3.zero);
-		Vector3 midPoint = new Vector3(0, 5, Mathf.Abs(opponentUnit.transform.position.z) - Mathf.Abs(playerUnit.transform.position.z));
+		Vector3[] path = MoveAlongPath.GetPath("Pokeball"); 
+		GameObject pokeball = Pool.i.CreateObject("Pokeball", path[0], Vector3.zero);
+		int shakeCount = TryToCatchPokemon(opponentUnit.pokemon);
 
-		LeanTween.move(pokeball, midPoint, 0.5f).setOnComplete(()=>
+		yield return MoveAlongPath.Initiate(pokeball, path, 0.75f, LeanTweenType.notUsed);
+		opponentUnit.FaintAnimation();
+
+		bool fall = false;
+		Vector3 groundPos = new Vector3(pokeball.transform.position.x, 
+										0.2f, pokeball.transform.position.z);
+		LeanTween.move(pokeball, groundPos, 0.8f).setEaseInCubic().setEaseOutBounce().setOnComplete(()=> fall=true).setDelay(0.25f);
+		yield return new WaitUntil(()=> fall==true);
+
+		for (int i=0; i < Mathf.Min(shakeCount, 3); ++i)
+		{
+			yield return new WaitForSeconds(0.5f);
+			yield return ShakePokeball(pokeball);
+		}
+
+		if (shakeCount == 4)
+		{
+			yield return dialog.TypeDialog($"{opponentUnit.pname} was caught!");	
+			//pokeball animation caught
+				
+			Pool.i.DestroyObject("Pokeball", pokeball);
+			playerParty.AddPokemon(opponentUnit.pokemon);
+			EXITstate(true);
+		} else {
+			//pokeball animation 
+				
+			yield return new WaitForSeconds(1f);
+			yield return opponentUnit.EnterAnimation();
+			if (shakeCount < 2)
+				yield return dialog.TypeDialog($"{opponentUnit.pname} broke free!");
+			else 
+				yield return dialog.TypeDialog("Almost caught it!");
+
+			Pool.i.DestroyObject("Pokeball", pokeball);
+			state = state.onturn;
+		}
+	}
+
+	private IEnumerator ShakePokeball(GameObject ball)
+	{
+		int cc = 0;
+		LeanTween.rotateZ(ball, -15f, 1f).setEasePunch().setOnComplete(()=> cc=1);
+		yield return new WaitUntil(() => cc==1);
+		LeanTween.rotateZ(ball, 15f, 1f).setEasePunch().setOnComplete(()=> cc=2);
+		yield return new WaitUntil(() => cc==2);
+		LeanTween.rotateZ(ball, 0, 1f).setEasePunch();
+	}
+
+	private int TryToCatchPokemon(PokemonClass p)
+	{
+		float a = (3 * p.maxHp - 2 * p.maxHp) 
+						* p.data.catchRate 
+							* ConditionDatabase.GetStatusBonus(p.status) 
+								/ (3 * p.maxHp);
+		if (a >= 255)
+			return 4;
+
+		float b = 1048560 / Mathf.Sqrt(Mathf.Sqrt(16711680 / a));
+		int shakeCount = 0;
+		while (shakeCount < 4)
+		{
+			if (UnityEngine.Random.Range(0, 65535) >= b)
+				break;
+
+			++shakeCount;
+		}
+
+		return shakeCount;
+	}
+
+	private IEnumerator TryToEscape()
+	{
+		state = state.busy;
+
+		if (against != BattleAgainst.wild)
+		{
+			yield return dialog.TypeDialog("You can't run from trainer battle!");
+			state = state.onturn;
+			yield break;
+		}
+
+		++escapeAttempts;
+
+		int pspd = playerUnit.pokemon.speed;
+		int ospd = opponentUnit.pokemon.speed;
+
+		if (ospd < pspd)
+		{
+			yield return dialog.TypeDialog("Ran away safely!");
+			EXITstate(true);
+		}
+		else 
+		{
+			float f = (pspd* 128) / ospd + 30* escapeAttempts;
+			f = f%256;
+
+			if (UnityEngine.Random.Range(0, 256) < f)
 			{
-				LeanTween.move(pokeball, opponentUnit.transform.position + new Vector3(0, opponentUnit.pokemon.data.baseSprite.bounds.size.y/2, 0), 0.5f).setOnComplete(()=> donAnim = true);
-			});
+				yield return dialog.TypeDialog("Ran away safely!");
+				EXITstate(true);
+			}	
+			else
+			{
+				yield return dialog.TypeDialog("Can't escape");
+				state = state.onturn;
+			}
 
-		yield return new WaitUntil(()=> donAnim == true);
-		Debug.Log("aha");
-
+		}
 	}
 }							

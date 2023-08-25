@@ -21,7 +21,7 @@ public class OverworldPokemonBehaviour : MonoBehaviour
 		if (triggered)
 			return;
 
-		if (Physics.OverlapSphere(triggerTransform.position, 2, triggerTo).Length > 0)
+		if (Physics.OverlapSphere(triggerTransform.position, radius, triggerTo).Length > 0)
 		{
 			GetComponent<Animator>().SetTrigger("t");
 			Invoke("MovePosition", 0.25f);

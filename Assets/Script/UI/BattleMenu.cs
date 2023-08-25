@@ -16,7 +16,10 @@ public class BattleMenu : MonoBehaviour
 	{
 		toggleMenu(false);
 		mui = GetComponent<MoveUI>();
+	}
 
+	private void OnEnable()
+	{
 		LeanTween.move(php, new Vector3(300, 36, 0), 0);
 		LeanTween.move(ohp, new Vector3(-300, -40, 0), 0);
 	}
@@ -81,6 +84,12 @@ public class BattleMenu : MonoBehaviour
 		}
 
 		onPkmn = !onPkmn;
+	}
+
+	public void onRUN()
+	{
+		toggleMenu(false);
+		BattleSystem.instances.RUNstate();
 	}
 
 	public void InputFight(InputAction.CallbackContext context)

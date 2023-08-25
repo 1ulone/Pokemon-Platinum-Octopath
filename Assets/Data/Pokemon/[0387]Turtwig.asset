@@ -16,6 +16,7 @@ MonoBehaviour:
   description: The shell on its back is made of soil. On a very healthy Turtwig,
     the shell should feel moist.
   animator: {fileID: 9100000, guid: ad6930d89c9df584fbc55d21cad64f16, type: 2}
+  baseSprite: {fileID: -1227878094, guid: e6d6d7c92f5f7cb43b3f1611ade8e4bb, type: 3}
   type1: 4
   type2: 0
   maxHp: 55
@@ -24,6 +25,9 @@ MonoBehaviour:
   specialAttack: 45
   specialDefense: 55
   speed: 31
+  catchRate: 45
+  expYield: 255
+  expGroupType: 1
   learnables:
   - move: {fileID: 11400000, guid: fdf61bbe8cd05f647ab01bcb6fa163fc, type: 2}
     level: 0
@@ -33,7 +37,7 @@ MonoBehaviour:
     level: 0
   inGameSize: 32
   height: 0
-  width: 0
+  weight: 0
   icon: {fileID: 1397137382, guid: 1b70ddb3eb69b094496c71babed1b4c8, type: 3}
   emmitsLight: 0
   lightColor: {r: 0, g: 0, b: 0, a: 0}

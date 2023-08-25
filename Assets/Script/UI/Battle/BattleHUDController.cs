@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,6 +8,7 @@ public class BattleHUDController : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI tname;
 	[SerializeField] private TextMeshProUGUI lvl;
 	[SerializeField] private HPUIController hpui;
+	[SerializeField] private HPUIController expui;
 	[SerializeField] private Image statusIcon;
 
 	[SerializeField] private bool isPlayerPokemon;
@@ -47,6 +49,11 @@ public class BattleHUDController : MonoBehaviour
 		}
 	}
 
+	public void SetLevel()
+	{
+		lvl.text = $"{pokemonm.level.ToString()}";
+	}
+
 	public void UpdateHP()
 	{ 
 		if (pokemonm.HpChanged)
@@ -57,4 +64,31 @@ public class BattleHUDController : MonoBehaviour
 			pokemonm.HpChanged = false;
 		}
 	}
+
+	public IEnumerator SetEXP(bool doLerp)
+	{
+		if (expui == null)
+			yield break;
+
+		if (doLerp)
+			expui.LerpHPUntil(GetNormalizedEXP());
+		else 
+			expui.SetHP(GetNormalizedEXP());
+
+		yield return new WaitUntil(()=> expui.doneLerp==true || doLerp==false);
+		expui.doneLerp = false;
+	}
+
+	//ADD EXP IMAGE;
+	public float GetNormalizedEXP()
+	{
+		int currentLevelExp = pokemonm.data.GetEXPforLevel(pokemonm.level);
+		int nextLevelExp = pokemonm.data.GetEXPforLevel(pokemonm.level+1);
+
+		float pp =(float)(pokemonm.exp-currentLevelExp)/(nextLevelExp-currentLevelExp);
+		Debug.Log(pp);
+
+		return Mathf.Clamp01(pp);
+	}
+
 }								   								   

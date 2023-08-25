@@ -29,10 +29,14 @@ public class GameSystemManager : MonoBehaviour
 		ConditionDatabase.Init();
 		opponentDatas = new List<opponentData>();
 	}
+	
+	private void Start()
+	{
+		importantObject.Add(FindObjectOfType<Pool>().gameObject);
+	}
 
 	private void ChangeStateToBattle()
 	{
-		importantObject.Add(FindObjectOfType<Pool>().gameObject);
 		if (allObject == null)
 		{
 			GameObject[] allObj = FindObjectsOfType<GameObject>();
@@ -51,6 +55,9 @@ public class GameSystemManager : MonoBehaviour
 		foreach(GameObject o in allObject)
 			if (o != null)
 				o.SetActive(true);
+
+		allObject.Clear();
+		allObject = null;
 	}
 
 	private void Load()
@@ -79,9 +86,9 @@ public class GameSystemManager : MonoBehaviour
 	{
 		playerParty = playerOverworld.party;
 
+		ChangeStateToBattle();
 		SceneManager.LoadScene("Battle-GrassField", LoadSceneMode.Additive);
 		SceneManager.LoadScene("BattleCore", LoadSceneMode.Additive);
-		ChangeStateToBattle();
 
 		Invoke("Load", 0.5f);
 		BattleSystem.against = ba;
